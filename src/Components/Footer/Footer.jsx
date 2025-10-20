@@ -10,7 +10,9 @@ function Footer() {
         <div className='row'>
           <div className="col ">
             <div className='logo_container mb-5'>
+              <Link to={'/'}>
               <img src="/footerLogo.png" className='img-fluid' alt="footerLogo" />
+              </Link>
             </div>
             <h6>a world where knowledge meets kindness, science meets service, and learning becomes a lifelong commitment to humanity.</h6>
           </div>
@@ -18,13 +20,13 @@ function Footer() {
             <ul className='list-unstyled d-flex flex-column gap-4'>
               <li><Link className='text-decoration-none text-light' to="/">Home</Link></li>
               <li><Link className='text-decoration-none text-light' to="/about">About</Link></li>
-              <li><Link className='text-decoration-none text-light' to="/admission">Admission</Link></li>
-              <li><Link className='text-decoration-none text-light' to="/facilities">Facilities</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/bscnursing">BSc Nursing</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/dpharm">D Pharm </Link></li>
             </ul>
             <ul className='list-unstyled d-flex flex-column gap-4'>
-              <li><Link className='text-decoration-none text-light' to="/career">Career</Link></li>
               <li><Link className='text-decoration-none text-light' to="/gallery">Gallery</Link></li>
-              <li><Link className='text-decoration-none text-light' to="/news-event ">News & Events</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/admission">Admission</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/career">Career</Link></li>
               <li><Link className='text-decoration-none text-light' to="/contact">Contact</Link></li>
             </ul>
           </div>
