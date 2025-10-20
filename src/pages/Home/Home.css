@@ -1,0 +1,76 @@
+.video-section {
+    height: 650px;
+    width: 100%;
+    background-color: var(--component);
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+    align-items:center ;
+    /* FIX: Add position: relative to make this the containing block */
+    position: relative; 
+}
+
+.video-section::before {
+    content: "";
+    /* The pseudo-element is absolutely positioned */
+    position: absolute; 
+    /* This shorthand sets top, right, bottom, and left to 0 */
+    inset: 0; 
+    background-color: rgba(5, 5, 5, 0.603);
+    z-index: 1;
+    /* Since its parent is now position: relative, it covers only the parent */
+}
+
+.bg-video {
+    /* KEY FIX: Takes the video out of the normal flow */
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    z-index: 0; /* Ensures it is the bottom layer */
+}
+
+.heading-groups {
+    /* Set z-index higher than the video (z-index: 0) and the overlay (z-index: 1) */
+    z-index: 2; 
+    
+    /* Center the text content and stack it */
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align:left;
+    
+    /* Ensure the text is readable by setting its color */
+    color: white; 
+    
+    /* Add padding/max-width to control how the text block sits */
+    max-width: 850px;
+    padding: 20px;
+    /* background-color: aqua; */
+}
+
+.main-heading{
+    /* background-color: aqua; */
+    max-width: 600px;
+}
+
+.main-heading h1{
+    font-size: 50px;
+}
+
+.sub-heading{
+    max-width:100%;
+} 
+
+.sub-heading p{
+    font-size: 25px;
+}
+
+.broadcast-section{
+    background-color: var(--main-color);
+    height: 80px;
+    
+}

@@ -1,0 +1,46 @@
+import { useState } from 'react'
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import About from './pages/About/About'
+import Admission from './pages/Admission/Admission'
+import Contact from './pages/Contact/Contact'
+import Courses from './pages/Courses/Courses'
+import Facilities from './pages/Facilities/Facilities'
+import Career from './pages/Career/Career'
+import Gallery from './pages/Gallery/Gallery'
+import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
+import BscNursing from './pages/BscNursing/BscNursing'
+import Dpharm from './pages/D Pharm/Dpharm'
+import Carrerdetails from './pages/Carrer details/Carrerdetails'
+
+
+function App() {
+
+  return (
+    <>
+      <Header />
+      <Routes>
+
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/admission' element={<Admission />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/courses' element={<Courses />} />
+        <Route path='/facilities' element={<Facilities />} />
+        <Route path='/career' element={<Career />} />
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/dpharm' element={<Dpharm />} />
+        <Route path='/bscnursing' element={<BscNursing />} />
+        <Route path='/careerdetails' element={<Carrerdetails />} />
+
+
+
+      </Routes>
+      <Footer />
+    </>
+  )
+}
+
+export default App

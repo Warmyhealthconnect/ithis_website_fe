@@ -1,0 +1,48 @@
+import React from 'react'
+import './Footer.css'
+import { Link } from 'react-router-dom'
+
+function Footer() {
+  return (
+    <>
+      <div className='footer_container'>
+        <h2>Empowering a brighter,healthier <br /> future with Ithis Medicity <br /><hr /></h2>
+        <div className='row'>
+          <div className="col ">
+            <div className='logo_container mb-5'>
+              <img src="/footerLogo.png" className='img-fluid' alt="footerLogo" />
+            </div>
+            <h6>a world where knowledge meets kindness, science meets service, and learning becomes a lifelong commitment to humanity.</h6>
+          </div>
+          <div className="col d-flex justify-content-evenly">
+            <ul className='list-unstyled d-flex flex-column gap-4'>
+              <li><Link className='text-decoration-none text-light' to="/">Home</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/about">About</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/admission">Admission</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/facilities">Facilities</Link></li>
+            </ul>
+            <ul className='list-unstyled d-flex flex-column gap-4'>
+              <li><Link className='text-decoration-none text-light' to="/career">Career</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/gallery">Gallery</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/news-event ">News & Events</Link></li>
+              <li><Link className='text-decoration-none text-light' to="/contact">Contact</Link></li>
+            </ul>
+          </div>
+          <div className="col d-flex justify-content-center">
+            <ul className='list-unstyled d-flex flex-column gap-4'>
+              <li><div><i class="fa-solid fa-envelope fa-sm text-white"></i> Email : ietcollegeofnursing@gmail.com</div></li>
+              <li><div><i class="fa-solid fa-phone fa-sm text-white"></i> Phone : +91 79022 88866, +91 7902288899</div></li>
+              <li className='d-flex'><div><i class="fa-solid fa-location-dot fa-sm text-white"></i> Location :</div> <div>Near Inkel City, Oorakam Melmuri,<br /> Panakkad PO,676519</div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className='footer_copyright d-flex justify-content-between px-4 pt-3 pb-2'>
+        <div className=''>Copyright &copy;2025 Ithis medicity. All rights reserved</div>
+        <div className=' '>Designed by Warmy health connect</div>
+      </div>
+    </>
+  )
+}
+
+export default Footer

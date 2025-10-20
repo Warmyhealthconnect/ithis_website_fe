@@ -1,0 +1,97 @@
+.banner-container {
+  position: relative;
+  height: 480px;
+  background: url('/bannerimg.jpg') center 20% / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+  overflow: hidden;
+}
+
+.banner-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(7, 25, 47, 0.74);
+  z-index: 1;
+}
+
+.banner-contents {
+  position: relative;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.heading {
+  font-size: 56px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+/* container for the small breadcrumb pieces */
+.banner-button {
+  display: flex;
+  align-items: center;
+  gap: 0;              /* we control spacing per element below */
+  font-size: 18px;
+}
+
+/* home icon circle */
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;             /* circle size */
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;         /* icon size */
+  padding: 0;
+}
+
+.home-btn:hover{
+  color: rgba(255, 255, 255, 0.516);
+}
+
+/* arrow placed tightly after the home icon */
+.breadcrumb-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;     /* small gap between home circle and chevron — lower for closer */
+  margin-right: 10px;   /* gap after chevron before the "Home" text */
+  font-size: 16px;
+  color: #fff;
+  transform: translateY(1px); /* micro vertical align */
+}
+
+/* the "Home" label after the arrow */
+.breadcrumb-text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  display: inline-block;
+}
+
+/* hover nicety */
+.home-btn:hover,
+.breadcrumb-text:hover {
+  opacity: 0.95;
+}
+
+/* responsive tweaks */
+@media (max-width: 700px) {
+  .heading { font-size: 36px; }
+  .home-btn { width: 34px; height: 34px; font-size: 14px; }
+  .breadcrumb-arrow { margin-left: 4px; margin-right: 8px; font-size: 14px; transform: translateY(0); }
+  .breadcrumb-text { font-size: 16px; }
+}

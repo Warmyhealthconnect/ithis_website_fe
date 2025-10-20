@@ -1,0 +1,62 @@
+.bsc_section1{
+    margin: 8% 0%;
+}
+
+.apply-btn {
+    background-color: var(--component);
+    color: white;
+    border-radius: 30px;
+    width: 170px;
+    height: 50px;
+}
+
+.apply-btn:hover {
+    border: 3px solid black;
+    background-color: white;
+    color: var(--component);
+}
+
+.download-btn {
+    border: none;
+    border-radius: 30px;
+    width: 170px;
+    height: 50px;
+    color: var(--component);
+}
+
+
+
+.download_div {
+    background-color: #112237;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.course_table{
+    margin: 8% 0%;
+}
+
+.course_table table {
+    width: 95%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.course_table th{
+    border: 2px solid white;
+    background-color:#112237;
+    vertical-align: middle;
+    padding: 15px 20px;
+}
+.course_table td {
+    border: 2px solid white;
+    vertical-align: middle;
+    padding: 15px 20px;
+}
+
+.course_table tbody tr {
+    background-color:var(--secondary);
+    /* light blue shade */
+    color: black;
+}

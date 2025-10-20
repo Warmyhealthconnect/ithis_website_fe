@@ -1,0 +1,33 @@
+.img_container{
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 20px grey;
+    border-radius: 5%;
+}
+
+.desc_container{
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 20px grey;
+    border-radius: 55px;
+    padding: 6% 4%;
+}
+
+.vision_card{
+    margin: 10%;
+    padding: 5%;
+    text-align: center;
+    height: 75%;
+    border: 1px solid white;
+    border-radius: 5%;
+}
+
+.vision_card h3{
+    margin-bottom: 15%;
+}
+
+.vision_card p{
+    font-size: medium;
+}
+
+.vision-container{
+    background-color: var(--component);
+}
