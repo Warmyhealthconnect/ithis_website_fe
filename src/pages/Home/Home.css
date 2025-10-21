@@ -1,73 +1,63 @@
-.video-section {
-    height: 650px;
-    width: 100%;
-    background-color: var(--component);
-    overflow: hidden;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    /* FIX: Add position: relative to make this the containing block */
+/* -------------------------------
+   PARALLAX CONTAINER
+--------------------------------*/
+.parallax-container {
+    font-family: Arial, sans-serif;
+}
+
+/* -------------------------------
+   PARALLAX BANNER
+--------------------------------*/
+.parallax-banner {
     position: relative;
+    height: 600px;
+    /* height of banner */
+    overflow: hidden;
 }
 
-.video-section::before {
-    content: "";
-    /* The pseudo-element is absolutely positioned */
-    position: absolute;
-    /* This shorthand sets top, right, bottom, and left to 0 */
-    inset: 0;
-    background-color: rgba(5, 5, 5, 0.603);
-    z-index: 1;
-    /* Since its parent is now position: relative, it covers only the parent */
-}
-
-.bg-video {
-    /* KEY FIX: Takes the video out of the normal flow */
-    position: absolute;
+/* Video stays fixed to create parallax illusion */
+.parallax-video {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    z-index: -1;
+    /* behind text */
+}
+
+/* Dark overlay to make video darker */
+.parallax-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* adjust alpha for darkness */
     z-index: 0;
-    /* Ensures it is the bottom layer */
+    /* above video but below text */
 }
 
-.heading-groups {
-    /* Set z-index higher than the video (z-index: 0) and the overlay (z-index: 1) */
-    z-index: 2;
-
-    /* Center the text content and stack it */
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    text-align: left;
-
-    /* Ensure the text is readable by setting its color */
+/* Banner text on top */
+.banner-text {
+    position: fixed;
+    z-index: 1;
     color: white;
-
-    /* Add padding/max-width to control how the text block sits */
-    max-width: 850px;
-    padding: 20px;
-    /* background-color: aqua; */
+    padding-left: 2%;
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease-out;
+    /* smooth fade effect */
 }
 
-.main-heading {
-    /* background-color: aqua; */
-    max-width: 600px;
+.banner-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
-.main-heading h1 {
-    font-size: 50px;
-}
-
-.sub-heading {
-    max-width: 100%;
-}
-
-.sub-heading p {
-    font-size: 25px;
+.banner-text p {
+    font-size: 24px;
 }
 
 .broadcast-section {
@@ -90,9 +80,73 @@
     margin: 0;
 }
 
+@keyframes scroll-loop {
+
+    /* Start the element at its natural position (no offset) */
+    0% {
+        transform: translateX(0);
+    }
+
+    /* Move the element exactly 50% of its width. 
+       Since the text is duplicated, this pulls the first copy off-screen 
+       and perfectly aligns the second copy at the start of the container. 
+       The animation then resets to 0% instantly, creating the seamless loop. */
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* -------------------------------
+   SCROLLABLE CONTENT
+--------------------------------*/
+
+.scrollable_section {
+    position: relative;
+    z-index: 1;
+    min-height: 500px;
+    background-color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Container with fixed logo */
+.logo-background {
+    position: relative;
+    /* required for pseudo-element */
+}
+
+.logo-background::before {
+    content: "";
+    position: fixed;
+    /* stays in place while scrolling */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    /* adjust size */
+    height: 250px;
+    background: url('/logo_bg.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.08;
+    /* faint watermark */
+    z-index: -1;
+    /* behind all content */
+}
+
 .principal-section {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    /* margin-top: 80px; */
     display: grid;
     grid-template-columns: 60% 40%;
 }
@@ -140,14 +194,14 @@
     width: 70%;
     height: 350px;
     border-radius: 20px;
-    background-image: url('homepage/principal.jpg');
+    background-image: url('/homepage/principal.jpg');
     background-size: cover;
     background-position: center top 80%;
     border: 10px solid var(--main-color);
 
 }
 
-.principal-txt-grp{
+.principal-txt-grp {
     z-index: 1;
     color: white;
     display: flex;
@@ -157,22 +211,117 @@
     line-height: 10px;
 }
 
-.principal-txt-grp h1{
+.principal-txt-grp h1 {
     font-size: 30px;
 }
 
-@keyframes scroll-loop {
 
-    /* Start the element at its natural position (no offset) */
-    0% {
-        transform: translateX(0);
+/* -------------------------------
+   OPTIONAL RESPONSIVE
+--------------------------------*/
+@media (max-width: 768px) {
+    .banner-text h1 {
+        font-size: 32px;
     }
 
-    /* Move the element exactly 50% of its width. 
-       Since the text is duplicated, this pulls the first copy off-screen 
-       and perfectly aligns the second copy at the start of the container. 
-       The animation then resets to 0% instantly, creating the seamless loop. */
-    100% {
-        transform: translateX(-50%);
+    .banner-text p {
+        font-size: 18px;
     }
+
+    .content-section {
+        padding: 60px 20px;
+    }
+}
+
+/* section2 */
+
+.home_section_2 {
+    padding: 2%;
+}
+
+.home_section_2 h4 {
+    text-align: justify;
+}
+
+.course-section {
+    background-color: white;
+    /* height: 1000px; */
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.course-section-txts {
+    /* margin-top: 40px; */
+    /* background-color: aqua; */
+    width: 63%;
+}
+
+.course-section-txts h1 {
+    font-size: 40px;
+}
+
+.course-section-txts p {
+    font-size: 25px;
+}
+
+.course-cards-container {
+    margin-top: 80px;
+    display: flex;
+    gap: 120px;
+    flex-wrap: wrap;
+}
+
+.course-card {
+    border: 2px solid black;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.card-overlay {
+    background-color: var(--component);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20%;
+}
+
+.course-card-img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.why-choose-us-section {
+    padding: 10%;
+    background-color: white;
+}
+
+.why-choose-text {
+    align-self: flex-start;
+    justify-self: start;
+    text-align: left;
+}
+
+.why-choose-box{
+    background-color: var(--main-color);
+    width: 370px;
+    height: 300px;
+    border-radius: 10px;
 }
