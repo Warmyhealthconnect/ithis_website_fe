@@ -2,11 +2,11 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 
     --main-color: #213D60;
     --secondary: #395473;
-    --component:#07192F;
+    --component: #07192F;
 }
