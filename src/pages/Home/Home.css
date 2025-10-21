@@ -5,17 +5,17 @@
     overflow: hidden;
     display: flex;
     justify-content: start;
-    align-items:center ;
+    align-items: center;
     /* FIX: Add position: relative to make this the containing block */
-    position: relative; 
+    position: relative;
 }
 
 .video-section::before {
     content: "";
     /* The pseudo-element is absolutely positioned */
-    position: absolute; 
+    position: absolute;
     /* This shorthand sets top, right, bottom, and left to 0 */
-    inset: 0; 
+    inset: 0;
     background-color: rgba(5, 5, 5, 0.603);
     z-index: 1;
     /* Since its parent is now position: relative, it covers only the parent */
@@ -23,54 +23,84 @@
 
 .bg-video {
     /* KEY FIX: Takes the video out of the normal flow */
-    position: absolute; 
-    top: 0; 
+    position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    z-index: 0; /* Ensures it is the bottom layer */
+    z-index: 0;
+    /* Ensures it is the bottom layer */
 }
 
 .heading-groups {
     /* Set z-index higher than the video (z-index: 0) and the overlay (z-index: 1) */
-    z-index: 2; 
-    
+    z-index: 2;
+
     /* Center the text content and stack it */
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    text-align:left;
-    
+    text-align: left;
+
     /* Ensure the text is readable by setting its color */
-    color: white; 
-    
+    color: white;
+
     /* Add padding/max-width to control how the text block sits */
     max-width: 850px;
     padding: 20px;
     /* background-color: aqua; */
 }
 
-.main-heading{
+.main-heading {
     /* background-color: aqua; */
     max-width: 600px;
 }
 
-.main-heading h1{
+.main-heading h1 {
     font-size: 50px;
 }
 
-.sub-heading{
-    max-width:100%;
-} 
+.sub-heading {
+    max-width: 100%;
+}
 
-.sub-heading p{
+.sub-heading p {
     font-size: 25px;
 }
 
-.broadcast-section{
+.broadcast-section {
     background-color: var(--main-color);
     height: 80px;
+    display: flex;
+    align-items: center;
+    overflow: hidden; 
+    white-space: nowrap;
+    /* REMOVE: justify-content: center; - This can interfere with the left-to-right flow */
+}
+
+.broadcast-text {
+    color: white;
+    display: inline-block;
+    /* REMOVE: padding-left: 100%; - This is the primary cause of the initial massive gap */
     
+    /* Animation remains the same speed/duration */
+    animation: scroll-loop 15s linear infinite; 
+    margin: 0;
+}
+
+@keyframes scroll-loop {
+    /* Start the element at its natural position (no offset) */
+    0% { 
+        transform: translateX(0); 
+    } 
+    
+    /* Move the element exactly 50% of its width. 
+       Since the text is duplicated, this pulls the first copy off-screen 
+       and perfectly aligns the second copy at the start of the container. 
+       The animation then resets to 0% instantly, creating the seamless loop. */
+    100% { 
+        transform: translateX(-50%); 
+    }
 }

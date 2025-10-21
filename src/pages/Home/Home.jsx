@@ -17,14 +17,16 @@ function Home() {
         </div>
       </section>
 
-      <section className='broadcast-section'></section>
+      <section className='broadcast-section'>
+        <p className='broadcast-text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non dolorum ipsum, asperiores enim quia voluptas veniam, deleniti perferendis perspiciatis facilis natus distinctio doloribus aperiam quibusdam mollitia quis beatae debitis animi!</p>
+      </section>
 
       <section className='mt-5 mb-5'></section>
 
 
     </>
   )
-  
+
 }
 
 export default Home
