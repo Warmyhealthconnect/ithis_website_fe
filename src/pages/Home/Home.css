@@ -1,76 +1,131 @@
-.video-section {
-    height: 650px;
-    width: 100%;
-    background-color: var(--component);
+/* -------------------------------
+   PARALLAX CONTAINER
+--------------------------------*/
+.parallax-container {
+    font-family: Arial, sans-serif;
+}
+
+/* -------------------------------
+   PARALLAX BANNER
+--------------------------------*/
+.parallax-banner {
+    position: relative;
+    height: 600px;
+    /* height of banner */
     overflow: hidden;
-    display: flex;
-    justify-content: start;
-    align-items:center ;
-    /* FIX: Add position: relative to make this the containing block */
-    position: relative; 
 }
 
-.video-section::before {
-    content: "";
-    /* The pseudo-element is absolutely positioned */
-    position: absolute; 
-    /* This shorthand sets top, right, bottom, and left to 0 */
-    inset: 0; 
-    background-color: rgba(5, 5, 5, 0.603);
-    z-index: 1;
-    /* Since its parent is now position: relative, it covers only the parent */
-}
-
-.bg-video {
-    /* KEY FIX: Takes the video out of the normal flow */
-    position: absolute; 
-    top: 0; 
+/* Video stays fixed to create parallax illusion */
+.parallax-video {
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    z-index: 0; /* Ensures it is the bottom layer */
+    z-index: -1;
+    /* behind text */
 }
 
-.heading-groups {
-    /* Set z-index higher than the video (z-index: 0) and the overlay (z-index: 1) */
-    z-index: 2; 
-    
-    /* Center the text content and stack it */
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    text-align:left;
-    
-    /* Ensure the text is readable by setting its color */
-    color: white; 
-    
-    /* Add padding/max-width to control how the text block sits */
-    max-width: 850px;
-    padding: 20px;
-    /* background-color: aqua; */
+/* Dark overlay to make video darker */
+.parallax-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* adjust alpha for darkness */
+    z-index: 0;
+    /* above video but below text */
 }
 
-.main-heading{
-    /* background-color: aqua; */
-    max-width: 600px;
+/* Banner text on top */
+.banner-text {
+  position: fixed;
+  z-index: 1;
+  color: white;
+  padding-left: 2%;
+  text-align: left;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease-out; /* smooth fade effect */
 }
 
-.main-heading h1{
-    font-size: 50px;
+.banner-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
-.sub-heading{
-    max-width:100%;
-} 
-
-.sub-heading p{
-    font-size: 25px;
+.banner-text p {
+    font-size: 24px;
 }
 
-.broadcast-section{
-    background-color: var(--main-color);
-    height: 80px;
-    
+/* -------------------------------
+   SCROLLABLE CONTENT
+--------------------------------*/
+
+.scrollable_section {
+    position: relative;
+    z-index: 1;
+    min-height: 500px;
+    background-color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Container with fixed logo */
+.logo-background {
+  position: relative; /* required for pseudo-element */
+}
+
+.logo-background::before {
+  content: "";
+  position: fixed; /* stays in place while scrolling */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;          /* adjust size */
+  height: 250px;
+  background: url('/logo_bg.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.08;         /* faint watermark */
+  z-index: -1;           /* behind all content */
+}
+
+/* -------------------------------
+   OPTIONAL RESPONSIVE
+--------------------------------*/
+@media (max-width: 768px) {
+    .banner-text h1 {
+        font-size: 32px;
+    }
+
+    .banner-text p {
+        font-size: 18px;
+    }
+
+    .content-section {
+        padding: 60px 20px;
+    }
+}
+
+/* section2 */
+
+.home_section_2{
+    padding: 2%;
+}
+
+.home_section_2 h4{
+    text-align: justify;
 }
