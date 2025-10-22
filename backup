@@ -1,0 +1,228 @@
+.video-section {
+    height: 650px;
+    width: 100%;
+    background-color: var(--component);
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* FIX: Add position: relative to make this the containing block */
+    position: relative;
+}
+
+.video-section::before {
+    content: "";
+    /* The pseudo-element is absolutely positioned */
+    position: absolute;
+    /* This shorthand sets top, right, bottom, and left to 0 */
+    inset: 0;
+    background-color: rgba(5, 5, 5, 0.603);
+    z-index: 1;
+    /* Since its parent is now position: relative, it covers only the parent */
+}
+
+.bg-video {
+    /* KEY FIX: Takes the video out of the normal flow */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    z-index: 0;
+    /* Ensures it is the bottom layer */
+}
+
+.heading-groups {
+    /* Set z-index higher than the video (z-index: 0) and the overlay (z-index: 1) */
+    z-index: 2;
+
+    /* Center the text content and stack it */
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+
+    /* Ensure the text is readable by setting its color */
+    color: white;
+
+    /* Add padding/max-width to control how the text block sits */
+    max-width: 850px;
+    padding: 20px;
+    /* background-color: aqua; */
+}
+
+.main-heading {
+    /* background-color: aqua; */
+    max-width: 600px;
+}
+
+.main-heading h1 {
+    font-size: 50px;
+}
+
+.sub-heading {
+    max-width: 100%;
+}
+
+.sub-heading p {
+    font-size: 25px;
+}
+
+.broadcast-section {
+    background-color: var(--main-color);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    /* REMOVE: justify-content: center; - This can interfere with the left-to-right flow */
+}
+
+.broadcast-text {
+    color: white;
+    display: inline-block;
+    /* REMOVE: padding-left: 100%; - This is the primary cause of the initial massive gap */
+
+    /* Animation remains the same speed/duration */
+    animation: scroll-loop 15s linear infinite;
+    margin: 0;
+}
+
+.principal-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.principal-text-section {
+    background-color: var(--main-color);
+    height: 560px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* gap: 90px; */
+    padding: 7% 7% 0% 7%;
+}
+
+.principal-text-section p {
+    margin-top: 60px;
+}
+
+.ithis-logo {
+    width: 150px;
+    height: 130px;
+    /* background-color: aqua; */
+}
+
+.ithis-logo-img {
+    height: 100%;
+}
+
+.principal-img-section {
+    background-color: var(--component);
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* horizontal */
+    align-items: center;
+    /* vertical */
+}
+
+.principal-img-container {
+    width: 70%;
+    height: 350px;
+    border-radius: 20px;
+    background-image: url('homepage/principal.jpg');
+    background-size: cover;
+    background-position: center top 80%;
+    border: 10px solid var(--main-color);
+
+}
+
+.principal-txt-grp{
+    z-index: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    line-height: 10px;
+}
+
+.principal-txt-grp h1{
+    font-size: 30px;
+}
+
+@keyframes scroll-loop {
+
+    /* Start the element at its natural position (no offset) */
+    0% {
+        transform: translateX(0);
+    }
+
+    /* Move the element exactly 50% of its width. 
+       Since the text is duplicated, this pulls the first copy off-screen 
+       and perfectly aligns the second copy at the start of the container. 
+       The animation then resets to 0% instantly, creating the seamless loop. */
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+import React from 'react'
+import './Home.css'
+
+function Home() {
+  return (
+    <>
+
+      <section className='video-section p-5'>
+        <video autoPlay loop muted playsInline className='bg-video' src="/videos/ithis.mp4"></video>
+        <div className='heading-groups'>
+          <div className='main-heading'>
+            <h1>CENTER OF EXCELLENCE FOR NURSING EDUCATION</h1>
+          </div>
+          <div className='sub-heading'>
+            <p>a world where knowledge meets kindness, science meets service, and learning becomes a lifelong commitment to humanity.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className='broadcast-section'>
+        <p className='broadcast-text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non dolorum ipsum, asperiores enim quia voluptas veniam, deleniti perferendis perspiciatis facilis natus distinctio doloribus aperiam quibusdam mollitia quis beatae debitis animi!</p>
+      </section>
+
+      <section className='principal-section'>
+        <div className="principal-text-section">
+          <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kind 4oss and care becomes a sacred duty. At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
+          <div className='img-fluid ithis-logo'>
+            <img src="/homepage/ithislogo.png" className='ithis-logo-img' alt="" />
+          </div>
+        </div>
+        <div className="principal-img-section">
+          <div className="principal-img-container">
+          </div>
+          <div className="principal-txt-grp">
+            <h1>Dr Vilasini C</h1>
+            <p>Principal. PHD(Nursing)</p>
+            <p>IET College of Nursing Malappuram</p>
+          </div>
+        </div>
+      </section>
+
+
+    </>
+  )
+
+}
+
+export default Home

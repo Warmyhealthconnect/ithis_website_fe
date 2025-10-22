@@ -17,6 +17,18 @@ function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const course = [
+    {
+      name: "D Pharm",
+      image: "/homepage/dpharm.png"
+    },
+    {
+      name: "BSC Nursing",
+      image: "/homepage/bsc.png"
+    },
+  ]
+
   return (
     <>
 
@@ -29,6 +41,10 @@ function Home() {
             <h1>CENTER OF <br />EXCELLENCE FOR <br />NURSING EDUCATION</h1>
             <p>a world where knowledge meets kindness, science meets service, <br />and learning becomes a lifelong commitment to humanity.</p>
           </div>
+        </section>
+
+        <section className='broadcast-section'>
+          <p className='broadcast-text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non dolorum ipsum, asperiores enim quia voluptas veniam, deleniti perferendis perspiciatis facilis natus distinctio doloribus aperiam quibusdam mollitia quis beatae debitis animi!</p>
         </section>
 
         {/* Scrollable Content */}
@@ -59,6 +75,48 @@ function Home() {
                 </div>
               </div>
             </section>
+
+            <section className='principal-section'>
+              <div className="principal-text-section">
+                <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kind 4oss and care becomes a sacred duty. At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
+                <div className='img-fluid ithis-logo'>
+                  <img src="/homepage/ithislogo.png" className='ithis-logo-img' alt="" />
+                </div>
+              </div>
+              <div className="principal-img-section">
+                <div className="principal-img-container">
+                </div>
+                <div className="principal-txt-grp">
+                  <h1>Dr Vilasini C</h1>
+                  <p>Principal. PHD(Nursing)</p>
+                  <p>IET College of Nursing Malappuram</p>
+                </div>
+              </div>
+            </section>
+
+            <section className='course-section'>
+              <div className="course-section-txts">
+                <h1>Courses</h1>
+                <p>Ithis Medicityprovides D.Pharm and B.Sc Nursing
+                  programs, combining comprehensive theoretical
+                  knowledge with practical training to prepare
+                  students for successful careers in pharmacy
+                  and nursing</p>
+              </div>
+
+              <div className="row course-cards-container">
+                {
+                  course.map(item => (
+                    <div className='col course-card'>
+                      <img src={item.image} className='course-card-img' alt="" />
+                      <div className="card-overlay">{item.name}</div>
+                    </div>
+                  ))
+                }
+
+              </div>
+            </section>
+
             <section className='home_section_3 '>
               <h2 className='text-start mx-3'>Facilities</h2>
               <div className='home_sec_3_container row mx-3'>
@@ -85,24 +143,31 @@ function Home() {
             <section className='home_section_4 '>
               <div className="row py-5">
                 <div className="col">
-                  <img src="/Homeimages/ietcop-2048x896.png" alt="Logo" className="circular-img"/>
+                  <img src="/Homeimages/ietcop-2048x896.png" alt="Logo" className="circular-img" />
                   <h5 className='py-3'>iet College of Pharmacy</h5>
                 </div>
                 <div className="col">
-                  <img src="/public/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" className="circular-img"/>
+                  <img src="/public/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" className="circular-img" />
                   <h5 className='py-3'>iet College of Pharmacy</h5>
                 </div>
                 <div className="col">
-                  <img src="/public/Homeimages/ithis_hospital.png" alt="Logo" className="circular-img px-4"/>
+                  <img src="/public/Homeimages/ithis_hospital.png" alt="Logo" className="circular-img px-4" />
                   <h5 className='py-3'>iet College of Pharmacy</h5>
                 </div>
               </div>
             </section>
+
+            <section className='why-choose-us-section'>
+              <div className="why-choose-text">
+                <h1>Why Choose Ithis</h1>
+              </div>
+
+              <div className='why-choose-box-container'>
+                <div className='why-choose-box'></div>
+              </div>
+            </section>
           </div>
         </section>
-
-
-
 
       </div>
 
