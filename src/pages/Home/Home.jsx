@@ -28,6 +28,37 @@ function Home() {
     },
   ]
 
+  const whychoose = [
+    {
+      name: "Graduate Programs",
+      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      logo: "/homepage/graduate.png",
+      color:"white",
+      background:"var(--main-color)"
+    },
+    {
+      name: "Undergraduate Programs",
+      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      logo: "/homepage/undergraduate.png",
+      color:"black",
+      background:"#F5F5F5"
+    },
+    {
+      name: "Graduate Programs",
+      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      logo: "/homepage/faculity.png",
+      color:"black",
+      background:"#D2DCE9"
+    },
+    {
+      name: "Graduate Programs",
+      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      logo: "/homepage/infra.png",
+      color:"black",
+      background:"#F5F5F5"
+    },
+  ]
+
   return (
     <>
 
@@ -116,8 +147,22 @@ function Home() {
             <h1>Why Choose Ithis</h1>
           </div>
 
-          <div c className='why-choose-box-container'>
-            <div className='why-choose-box'></div>
+          <div class="why-choose-box-container">
+            {
+              whychoose.map(item => (
+                <div className="why-choose-box" style={{ backgroundColor: item.background,color: item.color }}>
+                  <div className="why-choose-icon">
+                    <img src={item.logo} width={'12%'} alt="" />
+                  </div>
+                  <h2>Graduate Programs</h2>
+                  <p style={{color: item.color}}>
+                    Ithis Medicity provides D.Pharm and B.Sc Nursing programs, combining
+                    comprehensive theoretical knowledge.
+                  </p>
+                </div>
+              ))
+            }
+
           </div>
         </section>
 
