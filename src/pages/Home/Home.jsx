@@ -111,7 +111,9 @@ function Home() {
 
             <section className='principal-section'>
               <div className="principal-text-section">
-                <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kind 4oss and care becomes a sacred duty. At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
+                <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians
+                   of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kindness and care becomes a sacred duty. 
+                   At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
                 <div className='img-fluid ithis-logo'>
                   <img src="/homepage/ithislogo.png" className='ithis-logo-img' alt="" />
                 </div>
@@ -140,7 +142,7 @@ function Home() {
               <div className="row course-cards-container">
                 {
                   course.map(item => (
-                    <div className='col course-card'>
+                    <div className='col course-card shadow'>
                       <img src={item.image} className='course-card-img' alt="" />
                       <div className="card-overlay">{item.name}</div>
                     </div>
@@ -151,7 +153,7 @@ function Home() {
             </section>
 
             <section className='home_section_3 '>
-              <h2 className='text-start mx-3'>Facilities</h2>
+              <h1 className='text-start mx-3 my-4'>Facilities</h1>
               <div className='home_sec_3_container row mx-3'>
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/library.png" className='' alt="" />
@@ -173,6 +175,7 @@ function Home() {
                 </div>
               </div>
             </section>
+
             <section className='home_section_4 '>
               <div className="row py-5">
                 <div className="col">

@@ -1,0 +1,82 @@
+.fee-enquiry-section {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.fee-enquiry-section h2 {
+  margin-bottom: 20px;
+}
+
+/* Form Grid */
+.fee-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.fee-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.fee-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.fee-form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.fee-form input,
+.fee-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.fee-form button {
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.fee-form button:hover {
+  background-color: #2563eb;
+}
+
+/* Table */
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9fafb;
+}
+
+.fee-table th,
+.fee-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.fee-table button {
+  margin-right: 5px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.fee-table button:last-child {
+  background-color: #ef4444;
+}

@@ -259,6 +259,10 @@
 
 
 /* section 3 */
+.home_section_3{
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
 
 .home_sec_3_container{
     min-height: 100px;
@@ -275,6 +279,10 @@
     border-left: 1px solid grey;
 }
 
+.home_section_4{
+    margin-bottom: 5%;
+}
+
 .circular-img {
   width: 150px;             /* adjust size as needed */
   height: 150px;            /* same as width for perfect circle */
@@ -286,7 +294,6 @@
 
 
 .course-section {
-    background-color: white;
     /* height: 1000px; */
     padding: 10%;
     display: flex;
@@ -318,7 +325,7 @@
 }
 
 .course-card {
-    border: 2px solid black;
+    border: 1px solid gray;
     height: 500px;
     width: 500px;
     position: relative;
@@ -351,8 +358,8 @@
 }
 
 .why-choose-us-section {
+    margin-bottom: 5%;
     padding: 3%;
-    background-color: white;
 }
 
 .why-choose-text {
@@ -399,4 +406,140 @@
   font-size: 15px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ---------------------------------
+   MOBILE VIEW (Average Mobile Size)
+----------------------------------- */
+@media (max-width: 768px) {
+
+  /* Parallax Banner */
+  .banner-text {
+    position: fixed;
+    top: 45%;
+    left: 0;
+    padding: 0 5%;
+    text-align: center;
+  }
+
+  .banner-text h1 {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .banner-text p {
+    font-size: 16px;
+  }
+
+  /* Section 2 */
+  .home_section_2 .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home_section_2 .col-5,
+  .home_section_2 .col-6 {
+    width: 100%;
+  }
+
+  .home_section_2 img {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /* Principal Section */
+  .principal-section {
+    grid-template-columns: 1fr;
+  }
+
+  .principal-text-section,
+  .principal-img-section {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .principal-img-container {
+    width: 80%;
+    height: 250px;
+  }
+
+  /* Courses Section */
+  .course-section {
+    padding: 50px 20px;
+  }
+
+  .course-section-txts {
+    width: 100%;
+  }
+
+  .course-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .course-card {
+    width: 90%;
+    height: auto;
+  }
+
+  /* Facilities Section */
+  .home_sec_3_container {
+    flex-direction: column;
+    align-items: center;
+    border: none;
+  }
+
+  .home_sec_3_container img {
+    width: 25%;
+  }
+
+  .home_3_center_div {
+    border: none;
+  }
+
+  /* Circular Logo Section */
+  .home_section_4 .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circular-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Why Choose Us Section */
+  .why-choose-box-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .why-choose-box {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .why-choose-icon img {
+    width: 40px;
+  }
+
+  .why-choose-box h2 {
+    font-size: 20px;
+  }
+
+  .why-choose-box p {
+    font-size: 14px;
+  }
+
+  /* Button */
+  .apply-btn {
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+  }
 }

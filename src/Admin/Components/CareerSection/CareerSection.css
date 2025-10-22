@@ -1,0 +1,82 @@
+.career-section {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.career-section h2 {
+  margin-bottom: 20px;
+}
+
+/* Form Grid */
+.career-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.career-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.career-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.career-form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.career-form input,
+.career-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.career-form button {
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.career-form button:hover {
+  background-color: #2563eb;
+}
+
+/* Table */
+.career-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9fafb;
+}
+
+.career-table th,
+.career-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.career-table button {
+  margin-right: 5px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.career-table button:last-child {
+  background-color: #ef4444;
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Admission from './pages/Admission/Admission'
@@ -14,13 +14,18 @@ import Footer from './Components/Footer/Footer'
 import BscNursing from './pages/BscNursing/BscNursing'
 import Dpharm from './pages/D Pharm/Dpharm'
 import Carrerdetails from './pages/Carrer details/Carrerdetails'
+import AdminDashboard from './Admin/Pages/AdminDashboard'
 
 
 function App() {
+  const location = useLocation()
+
+  // Routes where Header/Footer should NOT be shown
+  const hideHeaderFooter = location.pathname.startsWith("/admin")
 
   return (
     <>
-      <Header />
+      {!hideHeaderFooter && <Header />}
       <Routes>
 
         <Route path='/' element={<Home />} />
@@ -36,9 +41,11 @@ function App() {
         <Route path='/careerdetails' element={<Carrerdetails />} />
 
 
+        {/* New Admin Route */}
+        <Route path='/admin' element={<AdminDashboard />} />
 
       </Routes>
-      <Footer />
+      {!hideHeaderFooter && <Footer />}
     </>
   )
 }
