@@ -141,3 +141,42 @@
 .dropdown:hover > a {
   color: #c9e0ff;
 }
+
+/* -------------------------------------- */
+/* 6. Scroll-based Color Adaptation       */
+/* -------------------------------------- */
+
+.header-container {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Default - white text for dark backgrounds */
+.header-container a {
+  color: #fff;
+  transition: color 0.4s ease;
+}
+
+/* When scrolling to light section */
+.header-container.light-nav a {
+  color: #000;
+}
+
+.header-container.light-nav .btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.header-container .btn {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Optional: add subtle background for visibility */
+.header-container.light-nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-container:not(.light-nav) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+

@@ -1,7 +1,27 @@
 import { Link } from "react-router-dom"
 import './Header.css'
+import { useEffect } from "react";
 
 function Header() {
+  useEffect(() => {
+    const header = document.querySelector(".header-container");
+
+    const handleScroll = () => {
+      // get the height of the first dark section (e.g., video banner)
+      const firstSection = document.querySelector(".video-section");
+      const triggerHeight = firstSection ? firstSection.offsetHeight - 50 : 500;
+
+      if (window.scrollY > triggerHeight) {
+        header.classList.add("light-nav");
+      } else {
+        header.classList.remove("light-nav");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
   return (
     <div className="header-container">
       <div className="header-contents">
@@ -27,8 +47,8 @@ function Header() {
             </li>
 
             <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/admission">Admission</Link></li> 
-            <li><Link to="/contact">Contact</Link></li> 
+            <li><Link to="/admission">Admission</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
 
           </ul>
         </div>

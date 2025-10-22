@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [opacity, setOpacity] = useState(1);
@@ -28,36 +29,38 @@ function Home() {
     },
   ]
 
+
   const whychoose = [
     {
       name: "Graduate Programs",
       para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
       logo: "/homepage/graduate.png",
-      color:"white",
-      background:"var(--main-color)"
+      color: "white",
+      background: "var(--main-color)"
     },
     {
       name: "Undergraduate Programs",
       para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
       logo: "/homepage/undergraduate.png",
-      color:"black",
-      background:"#F5F5F5"
+      color: "black",
+      background: "#F5F5F5"
     },
     {
       name: "Graduate Programs",
       para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
       logo: "/homepage/faculity.png",
-      color:"black",
-      background:"#D2DCE9"
+      color: "black",
+      background: "#D2DCE9"
     },
     {
       name: "Graduate Programs",
       para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
       logo: "/homepage/infra.png",
-      color:"black",
-      background:"#F5F5F5"
+      color: "black",
+      background: "#F5F5F5"
     },
   ]
+
 
   return (
     <>
@@ -86,83 +89,130 @@ function Home() {
                 <h1>Ithis Medicity Empowering Future Leaders in <br /> Healthcare Through Excellence and Integrity</h1>
               </div>
             </section>
-            <section className='home_section_2'>
-              <div className="row">
+            <section className='home_section_2 '>
+              <div className="row justify-content-between px-3 py-4">
                 <div className="col-5">
-                  1
+                  <img src="/Homeimages/home_section_2_img.png" className='img-fluid' alt="" />
                 </div>
-                <div className="col-7">
+                <div className="col-6 d-flex flex-column justify-content-between">
                   <h4>Ithis Nursing College, established in 2025, is a leading institution dedicated to advancing nursing education and healthcare excellence in Kerala.
                     The college aims to nurture skilled, compassionate, and ethical nursing professionals who can meet the evolving demands of the healthcare industry
                   </h4>
+                  <div className="d-flex justify-content-start">
+                    <Link to="/about">
+                      <button className="apply-btn btn rounded-pill me-4">
+                        Know More
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </section>
-          </div>
-        </section>
 
-        <section className='principal-section'>
-          <div className="principal-text-section">
-            <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kind 4oss and care becomes a sacred duty. At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
-            <div className='img-fluid ithis-logo'>
-              <img src="/homepage/ithislogo.png" className='ithis-logo-img' alt="" />
-            </div>
-          </div>
-          <div className="principal-img-section">
-            <div className="principal-img-container">
-            </div>
-            <div className="principal-txt-grp">
-              <h1>Dr Vilasini C</h1>
-              <p>Principal. PHD(Nursing)</p>
-              <p>IET College of Nursing Malappuram</p>
-            </div>
-          </div>
-        </section>
-
-        <section className='course-section'>
-          <div className="course-section-txts">
-            <h1>Courses</h1>
-            <p>Ithis Medicityprovides D.Pharm and B.Sc Nursing
-              programs, combining comprehensive theoretical
-              knowledge with practical training to prepare
-              students for successful careers in pharmacy
-              and nursing</p>
-          </div>
-
-          <div className="course-cards-container">
-            {
-              course.map(item => (
-                <div className='course-card'>
-                  <img src={item.image} className='course-card-img' alt="" />
-                  <div className="card-overlay">{item.name}</div>
+            <section className='principal-section'>
+              <div className="principal-text-section">
+                <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kind 4oss and care becomes a sacred duty. At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
+                <div className='img-fluid ithis-logo'>
+                  <img src="/homepage/ithislogo.png" className='ithis-logo-img' alt="" />
                 </div>
-              ))
-            }
-
-          </div>
-        </section>
-
-        <section className='why-choose-us-section'>
-          <div className="why-choose-text">
-            <h1>Why Choose Ithis</h1>
-          </div>
-
-          <div class="why-choose-box-container">
-            {
-              whychoose.map(item => (
-                <div className="why-choose-box" style={{ backgroundColor: item.background,color: item.color }}>
-                  <div className="why-choose-icon">
-                    <img src={item.logo} width={'12%'} alt="" />
-                  </div>
-                  <h2>Graduate Programs</h2>
-                  <p style={{color: item.color}}>
-                    Ithis Medicity provides D.Pharm and B.Sc Nursing programs, combining
-                    comprehensive theoretical knowledge.
-                  </p>
+              </div>
+              <div className="principal-img-section">
+                <div className="principal-img-container">
                 </div>
-              ))
-            }
+                <div className="principal-txt-grp">
+                  <h1>Dr Vilasini C</h1>
+                  <p>Principal. PHD(Nursing)</p>
+                  <p>IET College of Nursing Malappuram</p>
+                </div>
+              </div>
+            </section>
 
+            <section className='course-section'>
+              <div className="course-section-txts">
+                <h1>Courses</h1>
+                <p>Ithis Medicityprovides D.Pharm and B.Sc Nursing
+                  programs, combining comprehensive theoretical
+                  knowledge with practical training to prepare
+                  students for successful careers in pharmacy
+                  and nursing</p>
+              </div>
+
+              <div className="row course-cards-container">
+                {
+                  course.map(item => (
+                    <div className='col course-card'>
+                      <img src={item.image} className='course-card-img' alt="" />
+                      <div className="card-overlay">{item.name}</div>
+                    </div>
+                  ))
+                }
+
+              </div>
+            </section>
+
+            <section className='home_section_3 '>
+              <h2 className='text-start mx-3'>Facilities</h2>
+              <div className='home_sec_3_container row mx-3'>
+                <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
+                  <img src="/public/Homeimages/library.png" className='' alt="" />
+                  <h3 className='py-4'>Library</h3>
+                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <button className="apply-btn btn rounded-pill me-4">Explore More</button>
+                </div>
+                <div className="home_3_center_div col d-flex flex-column align-items-center justify-content-evenly py-5">
+                  <img src="/public/Homeimages/computer.png" className='' alt="" />
+                  <h3 className='py-4'>Computer Facilities</h3>
+                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <button className="apply-btn btn rounded-pill me-4">Explore More</button>
+                </div>
+                <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
+                  <img src="/public/Homeimages/hostel.png" className='' alt="" />
+                  <h3 className='py-4'>Hostel</h3>
+                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <button className="apply-btn btn rounded-pill me-4">Explore More</button>
+                </div>
+              </div>
+            </section>
+            <section className='home_section_4 '>
+              <div className="row py-5">
+                <div className="col">
+                  <img src="/Homeimages/ietcop-2048x896.png" alt="Logo" className="circular-img" />
+                  <h5 className='py-3'>iet College of Pharmacy</h5>
+                </div>
+                <div className="col">
+                  <img src="/public/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" className="circular-img" />
+                  <h5 className='py-3'>iet College of Pharmacy</h5>
+                </div>
+                <div className="col">
+                  <img src="/public/Homeimages/ithis_hospital.png" alt="Logo" className="circular-img px-4" />
+                  <h5 className='py-3'>iet College of Pharmacy</h5>
+                </div>
+              </div>
+            </section>
+
+            <section className='why-choose-us-section'>
+              <div className="why-choose-text">
+                <h1>Why Choose Ithis</h1>
+              </div>
+
+              <div class="why-choose-box-container">
+                {
+                  whychoose.map(item => (
+                    <div className="why-choose-box" style={{ backgroundColor: item.background, color: item.color }}>
+                      <div className="why-choose-icon">
+                        <img src={item.logo} width={'12%'} alt="" />
+                      </div>
+                      <h2>Graduate Programs</h2>
+                      <p style={{ color: item.color }}>
+                        Ithis Medicity provides D.Pharm and B.Sc Nursing programs, combining
+                        comprehensive theoretical knowledge.
+                      </p>
+                    </div>
+                  ))
+                }
+
+              </div>
+            </section>
           </div>
         </section>
 
