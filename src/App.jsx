@@ -15,6 +15,7 @@ import BscNursing from './pages/BscNursing/BscNursing'
 import Dpharm from './pages/D Pharm/Dpharm'
 import Carrerdetails from './pages/Carrer details/Carrerdetails'
 import AdminDashboard from './Admin/Pages/AdminDashboard'
+import { ToastContainer } from 'react-toastify'
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
 
       </Routes>
       {!hideHeaderFooter && <Footer />}
+      <ToastContainer/>
     </>
   )
 }

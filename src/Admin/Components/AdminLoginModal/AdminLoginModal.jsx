@@ -1,8 +1,36 @@
-import React from "react";
+import { useEffect,useState } from "react";
 import "./AdminLoginModal.css";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { loginApi } from "../../../../services/allApis";
 
 export default function AdminLoginModal({ show, onClose }) {
   if (!show) return null; // Don't render unless open
+
+  const [user, setUser] = useState({ email: "", password: "" })
+  const nav = useNavigate()
+
+  const loginUSer = async () => {
+    const { email, password } = user
+    if (!email || !password) {
+      toast.warning('Enter all fields')
+    }
+
+    try {
+      const response = await loginApi(user)
+      if (response.status === 200) {
+        toast.success(response.data);
+        nav('/admin')
+      } else {
+        toast.error(response.data);
+      }
+
+
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong");
+    }
+  }
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -22,14 +50,16 @@ export default function AdminLoginModal({ show, onClose }) {
         <form>
           <div className="mb-3">
             <label className="form-label">Email</label>
-            <input type="text" className="form-control" placeholder="Enter email" />
+            <input type="text" className="form-control" placeholder="Enter email"
+              onChange={(e) => { setUser({ ...user, email: e.target.value }) }} />
           </div>
           <div className="mb-3">
             <label className="form-label">Password</label>
-            <input type="password" className="form-control" placeholder="Enter password" />
+            <input type="password" className="form-control" placeholder="Enter password"
+              onChange={(e) => { setUser({ ...user, password: e.target.value }) }} />
           </div>
           <div className="d-flex justify-content-center mt-3">
-            <button type="submit" className="btn login_button">
+            <button type="button" className="btn login_button" onClick={loginUSer}>
               Login
             </button>
           </div>
