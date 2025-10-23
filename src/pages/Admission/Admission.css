@@ -1,57 +1,136 @@
-    .admission-grid {
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 100px;
-    }
+.admission-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
 
-    .info {
-        /* background-color: blue; */
-        width: 700px;
-        height: 1030px;
-        border-radius: 20px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.242);
-        padding: 60px;
-        
-    }
+/* Left Info Column */
+.info-column {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    height: 900px;
+}
 
-    .form {
-        background-color: var(--secondary);
-        width: 700px;
-        height: 1030px;
-        border-radius: 20px;
-    }
+.admission-heading h1 {
+    font-weight: 600;
+    font-size: 30px;
+    color: #000;
+}
 
-    .admission-heading{
-        width: 500px;
-    }
+.info-box {
+    font-size: 18px;
+    margin-top: 40px;
+    line-height: 1.6;
+}
 
-    .admission-heading h1{
-        font-weight: 600;
-        font-size: 30px;
-        color: black;
-    }
+.img-container {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+    background-image: url("/admissionimg.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
 
-    .info-box{
-        /* background-color: antiquewhite; */
-        width: 100%;
-        /* height: 40px; */
-        font-size: 20px;
-        margin-top: 70px;
-    }
+/* Right Form Column */
+.form-column {
+    position: relative;
+    /* Needed for fixed button inside */
+    background-color: var(--secondary);
+    border-radius: 20px;
+    height: 900px;
+    /* Same as left column */
+    padding: 20px 50px 80px 50px;
+    /* Extra bottom padding for button */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
 
-    .img-container{
-        /* background-color: antiquewhite; */
-        width: 100%;
-        height: 500px;
-        margin-top: 60px;
-        background-image: url('/admissionimg.jpg');
-        background-size: cover;
-        border-radius: 20px;
-    }
+.form-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-    .input-box{
-        display: flex;
+.form-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 10px;
+    /* for scrollbar space */
+}
+
+/* Fixed button at bottom */
+.form-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+}
+
+.form-button button {
+    width: 100%;
+    padding: 12px;
+    border-radius:50px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #fff;
+}
+
+.input-box input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 5px;
+    outline: none;
+}
+
+/* Subtle scrollbar style */
+.form-column::-webkit-scrollbar {
+    width: 6px;
+}
+
+.form-column::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+/* ---------------------------------
+   Responsive (Average Mobile)
+---------------------------------- */
+@media (max-width: 768px) {
+    .admission-section {
         flex-direction: column;
+        gap: 20px;
     }
+
+    .info-column,
+    .form-column {
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+
+    .img-container {
+        height: 250px;
+    }
+
+    .form-column {
+        overflow-y: visible;
+    }
+}

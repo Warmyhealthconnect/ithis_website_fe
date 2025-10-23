@@ -46,7 +46,7 @@ function Header() {
               </div>
             </li>
 
-            <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/gallery">Facilities</Link></li>
             <li><Link to="/admission">Admission</Link></li>
             <li><Link to="/contact">Contact</Link></li>
 
