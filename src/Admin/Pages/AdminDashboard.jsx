@@ -39,7 +39,7 @@ function AdminDashboard() {
     <div className="admin-dashboard">
       <aside className="sidebar">
         <div className="d-flex justify-content-center">
-          <img src="/public/footerLogo.png" className="img-fluid w-75" alt="" />
+          <img src="/footerLogo.png" className="img-fluid w-75" alt="" />
         </div>
         <hr className=""/>
         <ul>

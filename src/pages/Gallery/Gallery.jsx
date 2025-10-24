@@ -18,7 +18,7 @@ const galleryImages = [
 function Gallery() {
   return (
     <>
-      <Banner page={"Gallery"} />
+      <Banner page={"Facilities"} />
 
       {/* 2. Apply Grid to this container */}
       <div className="gallery-container">

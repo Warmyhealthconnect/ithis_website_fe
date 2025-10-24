@@ -101,7 +101,7 @@ function Home() {
         </section>
 
         <section className='broadcast-section'>
-          <p className='broadcast-text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non dolorum ipsum, asperiores enim quia voluptas veniam, deleniti perferendis perspiciatis facilis natus distinctio doloribus aperiam quibusdam mollitia quis beatae debitis animi!</p>
+          <p className='broadcast-text'>News and Announcements</p>
         </section>
 
         {/* Scrollable Content */}
@@ -136,8 +136,8 @@ function Home() {
             <section className='principal-section'>
               <div className="principal-text-section">
                 <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians
-                   of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kindness and care becomes a sacred duty. 
-                   At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
+                  of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kindness and care becomes a sacred duty.
+                  At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
                 <div className='ithis-logo'>
                   <img src="/footerLogo.png" className='img-fluid' alt="" />
                 </div>
@@ -180,21 +180,23 @@ function Home() {
               <h1 className='text-start mx-3 my-4'>Facilities</h1>
               <div className='home_sec_3_container row mx-3'>
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
-                  <img src="/public/Homeimages/library.png" className='' alt="" />
+                  <img src="/Homeimages/library.png" className='' alt="" />
                   <h3 className='py-4'>Library</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>The College has a spacious library with books, journals, periodicals etc. It has a seperate references sections for both students and faculties
+                    Internet facilities is also provided in refeernces sections. </h5>
                   <button className="know_more">Explore More</button>
                 </div>
                 <div className="home_3_center_div col d-flex flex-column align-items-center justify-content-evenly py-5">
-                  <img src="/public/Homeimages/computer.png" className='' alt="" />
+                  <img src="/Homeimages/computer.png" className='' alt="" />
                   <h3 className='py-4'>Computer Facilities</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>A computer lab has been set up for providing knowledge to the students. Computer facilities give the students ample opportunities for learning the system and practise. internet facilities is also provided. </h5>
                   <button className="know_more">Explore More</button>
                 </div>
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
-                  <img src="/public/Homeimages/hostel.png" className='' alt="" />
+                  <img src="/Homeimages/hostel.png" className='' alt="" />
                   <h3 className='py-4'>Hostel</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>here are seperate hostels for boys and girls .The Girls Hostel is being located in the campus. The hostel amenities and educational facilities are
+                    helping the students for leading a balanced life of study and leisure. </h5>
                   <button className="know_more">Explore More</button>
                 </div>
               </div>
@@ -208,11 +210,11 @@ function Home() {
                 </div>
                 <div className="col">
                   <img src="/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" className="circular-img" />
-                  <h5 className='py-3'>iet College of Pharmacy</h5>
+                  <h5 className='py-3'>iet Institute of Allied Health Science</h5>
                 </div>
                 <div className="col">
                   <img src="/Homeimages/ithis_hospital.png" alt="Logo" className="circular-img px-4" />
-                  <h5 className='py-3'>iet College of Pharmacy</h5>
+                  <h5 className='py-3'>iet hospital</h5>
                 </div>
               </div>
             </section>
