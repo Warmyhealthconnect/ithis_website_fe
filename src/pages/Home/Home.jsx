@@ -207,11 +207,11 @@ function Home() {
                   <h5 className='py-3'>iet College of Pharmacy</h5>
                 </div>
                 <div className="col">
-                  <img src="/public/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" className="circular-img" />
+                  <img src="/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" className="circular-img" />
                   <h5 className='py-3'>iet College of Pharmacy</h5>
                 </div>
                 <div className="col">
-                  <img src="/public/Homeimages/ithis_hospital.png" alt="Logo" className="circular-img px-4" />
+                  <img src="/Homeimages/ithis_hospital.png" alt="Logo" className="circular-img px-4" />
                   <h5 className='py-3'>iet College of Pharmacy</h5>
                 </div>
               </div>
