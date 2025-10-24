@@ -3,7 +3,6 @@
 --------------------------------*/
 .parallax-container {
   font-family: Arial, sans-serif;
-  pointer-events: none;
 }
 
 /* -------------------------------
@@ -16,7 +15,7 @@
   overflow: hidden;
 }
 
-/* Video stays fixed to create parallax illusion */
+/* Parallax Video stays fixed, no interference */
 .parallax-video {
   position: fixed;
   top: 0;
@@ -25,8 +24,8 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  pointer-events: none;  /* ✅ allows clicks to pass through */
-  /* behind text */
+  pointer-events: none;
+  /* ✅ allows clicks/scroll to pass through */
 }
 
 /* Dark overlay to make video darker */
@@ -129,26 +128,30 @@
   /* required for pseudo-element */
 }
 
+
+/* Fixed logo */
 .logo-background::before {
   content: "";
   position: fixed;
-  /* stays in place while scrolling */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 250px;
-  /* adjust size */
   height: 250px;
   background: url('/logo_bg.png') no-repeat center center;
   background-size: contain;
   opacity: 0.08;
-  /* faint watermark */
   z-index: -1;
-  /* behind all content */
+  pointer-events: none;
+  /* ✅ allows scroll to pass through */
+}
+
+.home_section_1 h6 {
+  color: #0A1E3599;
 }
 
 .principal-section {
-  /* margin-top: 80px; */
+  margin-top: 80px;
   display: grid;
   grid-template-columns: 60% 40%;
 }
@@ -161,25 +164,18 @@
   font-size: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   /* gap: 90px; */
   padding: 7% 7% 0% 7%;
 }
 
-.principal-text-section p {
-  margin-top: 60px;
-}
-
 .ithis-logo {
-  width: 150px;
-  height: 130px;
+
+  width: 8vw;
   /* background-color: aqua; */
 }
 
-.ithis-logo-img {
-  height: 100%;
-}
 
 .principal-img-section {
   background-color: var(--component);
@@ -218,22 +214,6 @@
 }
 
 
-/* -------------------------------
-   OPTIONAL RESPONSIVE
---------------------------------*/
-@media (max-width: 768px) {
-  .banner-text h1 {
-    font-size: 32px;
-  }
-
-  .banner-text p {
-    font-size: 18px;
-  }
-
-  .content-section {
-    padding: 60px 20px;
-  }
-}
 
 /* section2 */
 
@@ -245,16 +225,17 @@
   text-align: justify;
 }
 
-.apply-btn {
+.know_more {
   background-color: var(--component);
   color: white;
   border-radius: 30px;
-  width: 170px;
-  height: 50px;
+  width: 15vw;
+  height: 5vw;
+  font-size: 1.5vw;
 }
 
-.apply-btn:hover {
-  border: 3px solid black;
+.know_more:hover {
+  border: 1px solid black;
   background-color: white;
   color: var(--component);
 }
@@ -302,7 +283,6 @@
 
 
 .course-section {
-  /* height: 1000px; */
   padding: 10%;
   display: flex;
   flex-direction: column;
@@ -312,8 +292,6 @@
 }
 
 .course-section-txts {
-  /* margin-top: 40px; */
-  /* background-color: aqua; */
   width: 63%;
 }
 
@@ -330,6 +308,7 @@
   display: flex;
   gap: 120px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .course-card {
@@ -362,7 +341,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .why-choose-us-section {
@@ -376,13 +354,17 @@
   text-align: left;
 }
 
+/* Why Choose Us Section */
 .why-choose-box-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  width: 100%;
-  gap: 10px;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+  justify-content: flex-start;
 }
 
 .why-choose-box {
@@ -410,41 +392,80 @@
   margin-bottom: 10px;
 }
 
-.why-choose-box p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+.why-choose-box {
+  flex: 0 0 80%;
+  /* ensures boxes overflow container */
+  scroll-snap-align: center;
 }
 
 
 /* ---------------------------------
    MOBILE VIEW (Average Mobile Size)
 ----------------------------------- */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+
+
+  .parallax-banner {
+    height: 95vh;
+  }
+
+  .logo-background::before,
+  .parallax-video {
+    height: 95vh;
+    pointer-events: none !important;
+  }
 
   /* Parallax Banner */
   .banner-text {
     position: fixed;
-    top: 45%;
+    top: 75%;
     left: 0;
-    padding: 0 5%;
-    text-align: center;
+    width: 100%;
+    padding: 0 6%;
+    text-align: left;
   }
 
   .banner-text h1 {
-    font-size: 26px;
+    font-size: 20px;
+    font-weight: 700;
     line-height: 1.4;
+    margin-bottom: 10px;
   }
 
   .banner-text p {
-    font-size: 16px;
+    font-size: 9px;
   }
 
-  /* Section 2 */
+  /* Broadcast Section */
+  .broadcast-section {
+    height: 5vh;
+  }
+
+
+  .broadcast-text {
+    font-size: 10px;
+    animation-duration: 20s;
+  }
+
+  .scrollable_section {
+    padding-top: 15%;
+  }
+
+  .home_section_1 h6 {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .home_section_1 h1 {
+    font-size: 14px;
+  }
+
+  /* Section 2 (About Ithis) */
   .home_section_2 .row {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 0;
   }
 
   .home_section_2 .col-5,
@@ -454,43 +475,91 @@
 
   .home_section_2 img {
     width: 90%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
+
+  .home_section_2 h4 {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+
 
   /* Principal Section */
   .principal-section {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
   }
 
   .principal-text-section,
   .principal-img-section {
     height: auto;
-    padding: 40px 20px;
+    padding: 15px 15px;
+  }
+
+  .principal-text-section p {
+    font-size: 9px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    text-align: justify;
   }
 
   .principal-img-container {
-    width: 80%;
-    height: 250px;
+    width: 70%;
+    height: 150px;
+    border: 3px solid var(--main-color);
+  }
+
+  .principal-txt-grp h1 {
+    font-size: 12px;
+  }
+
+  .principal-txt-grp p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 9px;
   }
 
   /* Courses Section */
   .course-section {
-    padding: 50px 20px;
+    padding: 40px 15px;
   }
 
   .course-section-txts {
     width: 100%;
   }
 
+  .course-section-txts h1 {
+    font-size: 22px;
+  }
+
+  .course-section-txts p {
+    font-size: 14px;
+  }
+
   .course-cards-container {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
   }
 
   .course-card {
     width: 90%;
     height: auto;
+    /* allows height to adjust automatically */
+  }
+
+  .card-overlay {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .course-card-img {
+    position: relative;
+    width: auto;
+    height: 250px;
+    /* adjust height for mobile cards */
   }
 
   /* Facilities Section */
@@ -498,78 +567,70 @@
     flex-direction: column;
     align-items: center;
     border: none;
+    padding: 20px 0;
   }
 
   .home_sec_3_container img {
-    width: 25%;
+    width: 30%;
+    margin-bottom: 10px;
   }
 
-  .home_3_center_div {
-    border: none;
+  .home_sec_3_container h3 {
+    font-size: 18px;
   }
 
-  /* Circular Logo Section */
+  .home_sec_3_container h5 {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* Circular Logos Section */
   .home_section_4 .row {
     flex-direction: column;
     align-items: center;
   }
 
   .circular-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
-  /* Why Choose Us Section - Horizontal Scroll on Mobile */
+  .home_section_4 h5 {
+    font-size: 14px;
+  }
+
+  /* Why Choose Us Section */
+  .why-choose-us-section {
+    position: relative;
+    z-index: 10;
+    /* anything above 0 */
+    padding: 20px 10px;
+  }
+
   .why-choose-box-container {
     display: flex;
     flex-direction: row;
-    gap: 20px;
     overflow-x: auto;
-    /* enables horizontal scroll */
     overflow-y: hidden;
-    /* hides vertical scroll */
+    gap: 20px;
     scroll-snap-type: x mandatory;
-    /* smooth snap effect */
     -webkit-overflow-scrolling: touch;
-    /* smooth on iOS */
-    padding-bottom: 10px;
-    /* space for scrollbar */
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+
+    /* ✅ Remove centering */
+    justify-content: flex-start;
+    /* left-align items so overflow works */
   }
 
-  /* Each box aligns nicely during scroll */
   .why-choose-box {
     flex: 0 0 80%;
-    /* each box takes ~80% of screen width */
     scroll-snap-align: center;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-  }
-
-  /* Optional scrollbar styling */
-  .why-choose-box-container::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .why-choose-box-container::-webkit-scrollbar-thumb {
-    background: rgba(150, 150, 150, 0.4);
-    border-radius: 3px;
-  }
-
-  .why-choose-box-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(150, 150, 150, 0.7);
-  }
-
-
-  .why-choose-box {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    text-align: center;
   }
 
   .why-choose-icon img {
-    width: 40px;
+    width: 35px;
   }
 
   .why-choose-box h2 {
@@ -577,13 +638,13 @@
   }
 
   .why-choose-box p {
-    font-size: 10px;
+    font-size: 11px;
   }
 
-  /* Button */
+  /* Buttons */
   .apply-btn {
-    width: 150px;
-    height: 45px;
-    font-size: 14px;
+    width: 10px;
+    height: 10px;
+    font-size: 13px;
   }
 }

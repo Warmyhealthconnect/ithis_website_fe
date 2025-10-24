@@ -74,7 +74,7 @@ function Home() {
         <section className="parallax-banner">
           <video autoPlay loop muted playsInline className="parallax-video" src="/videos/ithis.mp4" />
           <div className="banner-text" style={{ opacity }}>
-            <h1>CENTER OF <br />EXCELLENCE FOR <br />NURSING EDUCATION</h1>
+            <h1>CENTER OF EXCELLENCE <br /> FOR NURSING EDUCATION</h1>
             <p>a world where knowledge meets kindness, science meets service, <br />and learning becomes a lifelong commitment to humanity.</p>
           </div>
         </section>
@@ -103,7 +103,7 @@ function Home() {
                   </h4>
                   <div className="d-flex justify-content-start">
                     <Link to="/about">
-                      <button className="apply-btn btn rounded-pill me-4">
+                      <button className="know_more">
                         Know More
                       </button>
                     </Link>
@@ -117,8 +117,8 @@ function Home() {
                 <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians
                    of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kindness and care becomes a sacred duty. 
                    At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
-                <div className='img-fluid ithis-logo'>
-                  <img src="/homepage/ithislogo.png" className='ithis-logo-img' alt="" />
+                <div className='ithis-logo'>
+                  <img src="/footerLogo.png" className='img-fluid' alt="" />
                 </div>
               </div>
               <div className="principal-img-section">
@@ -146,7 +146,7 @@ function Home() {
                 {
                   course.map(item => (
                     <div className='col course-card shadow'>
-                      <img src={item.image} className='course-card-img' alt="" />
+                      <img src={item.image} className='img-fluid course-card-img' alt="" />
                       <div className="card-overlay">{item.name}</div>
                     </div>
                   ))
@@ -162,19 +162,19 @@ function Home() {
                   <img src="/public/Homeimages/library.png" className='' alt="" />
                   <h3 className='py-4'>Library</h3>
                   <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
-                  <button className="apply-btn btn rounded-pill me-4">Explore More</button>
+                  <button className="know_more">Explore More</button>
                 </div>
                 <div className="home_3_center_div col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/computer.png" className='' alt="" />
                   <h3 className='py-4'>Computer Facilities</h3>
                   <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
-                  <button className="apply-btn btn rounded-pill me-4">Explore More</button>
+                  <button className="know_more">Explore More</button>
                 </div>
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/hostel.png" className='' alt="" />
                   <h3 className='py-4'>Hostel</h3>
                   <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
-                  <button className="apply-btn btn rounded-pill me-4">Explore More</button>
+                  <button className="know_more">Explore More</button>
                 </div>
               </div>
             </section>
@@ -201,7 +201,7 @@ function Home() {
                 <h1>Why Choose Ithis</h1>
               </div>
 
-              <div class="why-choose-box-container">
+              <div className="why-choose-box-container">
                 {
                   whychoose.map(item => (
                     <div className="why-choose-box" style={{ backgroundColor: item.background, color: item.color }}>

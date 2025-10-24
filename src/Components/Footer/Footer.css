@@ -2,6 +2,8 @@
   color: white;
   background-color: #183559F5;
   padding: 5% 3%;
+  position: relative; /* create a stacking context */
+  z-index: 2; /* higher than fixed video & logo */
 }
 
 .footer_container hr {
