@@ -127,6 +127,7 @@ function Header() {
 
             <li><Link to="/gallery" onClick={handleNavClick}>Facilities</Link></li>
             <li><Link to="/admission" onClick={handleNavClick}>Admission</Link></li>
+            <li><Link to="/career" onClick={handleNavClick}>Career</Link></li>
             <li><Link to="/contact" onClick={handleNavClick}>Contact</Link></li>
 
             <li className="sidebar-apply">

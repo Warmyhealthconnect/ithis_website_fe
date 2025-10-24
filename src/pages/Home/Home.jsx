@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom';
 
@@ -18,6 +18,18 @@ function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        console.log("Autoplay prevented, user interaction required");
+      });
+    }
+  }, []);
+
 
 
 
@@ -72,14 +84,20 @@ function Home() {
 
         {/* Parallax Banner */}
         <section className="parallax-banner">
-          <video autoPlay loop muted playsInline className="parallax-video"   >
+          <video
+            ref={videoRef}
+            loop
+            muted
+            playsInline
+            className="parallax-video"
+          >
             <source src="/videos/ithis.webm" type="video/webm" />
             <source src="/videos/ithis.mp4" type="video/mp4" />
-            </video>
-            <div className="banner-text" style={{ opacity }}>
-              <h1>CENTER OF <br />EXCELLENCE FOR <br />NURSING EDUCATION</h1>
-              <p>a world where knowledge meets kindness, science meets service, <br />and learning becomes a lifelong commitment to humanity.</p>
-            </div>
+          </video>
+          <div className="banner-text" style={{ opacity }}>
+            <h1>CENTER OF <br />EXCELLENCE FOR <br />NURSING EDUCATION</h1>
+            <p>a world where knowledge meets kindness, science meets service, <br />and learning becomes a lifelong commitment to humanity.</p>
+          </div>
         </section>
 
         <section className='broadcast-section'>
