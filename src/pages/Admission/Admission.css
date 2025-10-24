@@ -55,15 +55,110 @@
     flex-direction: column;
 }
 
+
+
 .form-content {
-    flex: 1;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding-right: 10px;
-    /* for scrollbar space */
+    gap: 15px;
+    max-height: 100%;
+    overflow-y: auto;
+    padding-bottom: 70px;
+    /* space for fixed button */
 }
+
+.row-inputs {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.row-inputs label {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.row-inputs input,
+.row-inputs select {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.row-inputs input[type="file"] {
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.full-width {
+    flex: 1 1 100%;
+}
+
+.gender-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+.gender-label {
+    font-weight: 500;
+}
+
+.gender-options label {
+    margin: 0;
+    font-weight: 400;
+}
+
+.gender-options input[type="radio"] {
+    vertical-align: middle;
+}
+
+
+.nationality_options label {
+    margin: 0;
+    font-weight: 500;
+}
+
+.nationality_options input[type="radio"] {
+    vertical-align: middle;
+}
+
+.marks-section {
+    margin-bottom: 20px;
+}
+
+.marks-section-label {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.marks-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.marks-label {
+    flex: 1;
+    /* left side takes 1 part */
+    font-weight: 500;
+}
+
+.marks-input {
+    flex: 2;
+    /* input field takes 2 parts */
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
 
 /* Fixed button at bottom */
 .form-button {
@@ -78,27 +173,12 @@
 .form-button button {
     width: 100%;
     padding: 12px;
-    border-radius:50px;
+    border-radius: 50px;
     border: none;
     font-size: 16px;
     cursor: pointer;
 }
 
-
-.input-box {
-    display: flex;
-    flex-direction: column;
-    font-weight: 500;
-    color: #fff;
-}
-
-.input-box input {
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    margin-top: 5px;
-    outline: none;
-}
 
 /* Subtle scrollbar style */
 .form-column::-webkit-scrollbar {
