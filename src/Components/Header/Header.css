@@ -166,7 +166,7 @@
 }
 
 .header-container.light-nav .btn {
-  background-color: #000;
+  background-color: var(--component);
   color: #fff;
 }
 
