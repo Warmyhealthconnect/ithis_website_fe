@@ -31,6 +31,10 @@
     margin-right: -100px; 
 }
 
+.header-logo{
+  margin-left: -100px;
+}
+
 /* -------------------------------------- */
 /* 3. Link Group Positioning (CRITICAL) */
 /* -------------------------------------- */
@@ -180,3 +184,209 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* --------------------------
+   Hamburger & Sidebar (mobile)
+   -------------------------- */
+
+/* Basic hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* three bars */
+.hamburger .hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px 0;
+  background: #fff; /* default color; desktop JS changes color via header-container.light-nav */
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Active state: small animation */
+.hamburger.is-active .hamburger-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.is-active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active .hamburger-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Sidebar overlay */
+.sidebar-overlay {
+  display: none;
+}
+
+/* Sidebar drawer */
+.sidebar-drawer {
+  display: none;
+}
+
+/* Mobile rules */
+@media (max-width: 900px) {
+  .header-logo{
+    margin-left: -20px;
+  }
+  /* show hamburger */
+  .hamburger {
+    display: flex;
+    z-index: 1002;
+    margin-right: 30px;
+  }
+
+  /* hide original desktop apply button */
+  .apply-button {
+    display: none;
+  }
+
+  /* hide the desktop nav links (desktop layout) - but keep markup */
+  .header-links {
+    display: none;
+  }
+
+  /* Sidebar overlay (dim background) */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+  }
+  .sidebar-overlay.visible {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Drawer */
+  .sidebar-drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -320px; /* hidden by default */
+    width: 320px;
+    max-width: 85%;
+    height: 100vh;
+    background: var(--component, #05293a); /* try to follow your theme; fallback color provided */
+    color: #fff;
+    z-index: 1001;
+    box-shadow: 2px 0 14px rgba(0,0,0,0.35);
+    transition: right 0.28s cubic-bezier(.2,.9,.2,1);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-drawer.open {
+    right: 0;
+  }
+
+  /* Top row inside drawer */
+  .sidebar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 14px;
+  }
+  .sidebar-top .sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .sidebar-close {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  /* Drawer nav list */
+  .sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 8px;
+  }
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sidebar-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 4px;
+    display: inline-block;
+  }
+
+  /* Course collapsible */
+  .mobile-course-toggle {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sidebar-sublist {
+    list-style: none;
+    padding-left: 12px;
+    margin: 4px 0 0 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.22s ease;
+  }
+  .sidebar-sublist.open {
+    max-height: 200px; /* plenty for two items */
+  }
+  .sidebar-sublist li a {
+    font-size: 15px;
+    color: #eaf6ff;
+    padding: 8px 0;
+    display: block;
+  }
+  .chev {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    margin-left: 8px;
+  }
+  .chev.open {
+    transform: rotate(-135deg);
+  }
+
+  .sidebar-apply {
+    padding-top: 12px;
+  }
+  .sidebar-apply .btn {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
