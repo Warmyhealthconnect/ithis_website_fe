@@ -78,6 +78,7 @@ function Header() {
 
               <li><Link to="/gallery">Facilities</Link></li>
               <li><Link to="/admission">Admission</Link></li>
+              <li><Link to="/career">Career</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
