@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom';
 
+
 function Home() {
   const [opacity, setOpacity] = useState(1);
 
@@ -17,6 +18,8 @@ function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+
 
   const course = [
     {

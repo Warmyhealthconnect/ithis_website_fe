@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Footer.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AdminLoginModal from '../../Admin/Components/AdminLoginModal/AdminLoginModal'
+
 
 function Footer() {
   const [showModal, setShowModal] = useState(false);
+ 
   return (
     <>
       <div className='footer_container'>
@@ -51,7 +53,7 @@ function Footer() {
         <div className=' '>Designed by Warmy health connect</div>
       </div>
 
-       {/* Modal Component */}
+      {/* Modal Component */}
       <AdminLoginModal show={showModal} onClose={() => setShowModal(false)} />
     </>
   )
