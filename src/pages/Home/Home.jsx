@@ -95,8 +95,8 @@ function Home() {
             <source src="/videos/ithis.mp4" type="video/mp4" />
           </video>
           <div className="banner-text" style={{ opacity }}>
-            <h1>CENTER OF <br />EXCELLENCE FOR <br />NURSING EDUCATION</h1>
-            <p>a world where knowledge meets kindness, science meets service, <br />and learning becomes a lifelong commitment to humanity.</p>
+            <h1>CENTER OF EXCELLENCE <br /> FOR NURSING EDUCATION</h1>
+            <p className='banner-text-para'>a world where knowledge meets kindness, science meets service, <br />and learning becomes a lifelong commitment to humanity.</p>
           </div>
         </section>
 
