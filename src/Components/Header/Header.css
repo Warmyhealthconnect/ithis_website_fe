@@ -31,6 +31,10 @@
     margin-right: -100px; 
 }
 
+.header-logo{
+  margin-left: -100px;
+}
+
 /* -------------------------------------- */
 /* 3. Link Group Positioning (CRITICAL) */
 /* -------------------------------------- */
@@ -229,6 +233,9 @@
 
 /* Mobile rules */
 @media (max-width: 900px) {
+  .header-logo{
+    margin-left: -20px;
+  }
   /* show hamburger */
   .hamburger {
     display: flex;
