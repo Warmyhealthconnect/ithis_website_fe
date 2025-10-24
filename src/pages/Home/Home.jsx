@@ -72,7 +72,7 @@ function Home() {
 
         {/* Parallax Banner */}
         <section className="parallax-banner">
-          <video autoPlay loop muted playsInline className="parallax-video" src="/videos/ithis.mp4" />
+          <video autoPlay loop muted playsInline className="parallax-video"   > <source src="/videos/ithis.mp4" type='video/mp4'/></video>
           <div className="banner-text" style={{ opacity }}>
             <h1>CENTER OF <br />EXCELLENCE FOR <br />NURSING EDUCATION</h1>
             <p>a world where knowledge meets kindness, science meets service, <br />and learning becomes a lifelong commitment to humanity.</p>
@@ -115,8 +115,8 @@ function Home() {
             <section className='principal-section'>
               <div className="principal-text-section">
                 <p>It is with immense pride and joy that I welcome you to lET College of Nursing, Malappuram - a center of excellence committed to shaping the future guardians
-                   of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kindness and care becomes a sacred duty. 
-                   At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
+                  of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kindness and care becomes a sacred duty.
+                  At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
                 <div className='img-fluid ithis-logo'>
                   <img src="/homepage/ithislogo.png" className='ithis-logo-img' alt="" />
                 </div>
