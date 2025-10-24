@@ -10,7 +10,7 @@ export default function AdminLoginModal({ show, onClose }) {
   const [user, setUser] = useState({ email: "", password: "" })
   const nav = useNavigate()
 
-  const loginUSer = async () => {
+  const loginUser = async () => {
     const { email, password } = user
     if (!email || !password) {
       toast.warning('Enter all fields')
@@ -59,7 +59,7 @@ export default function AdminLoginModal({ show, onClose }) {
               onChange={(e) => { setUser({ ...user, password: e.target.value }) }} />
           </div>
           <div className="d-flex justify-content-center mt-3">
-            <button type="button" className="btn login_button" onClick={loginUSer}>
+            <button type="button" className="btn login_button" onClick={loginUser}>
               Login
             </button>
           </div>
