@@ -1,12 +1,9 @@
 {
   "headers": [
     {
-      "source": "/static/videos/(.*)\\.mp4",
+      "source": "/videos/(.*)",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "video/mp4"
-        }
+        { "key": "Content-Type", "value": "video/mp4" }
       ]
     }
   ]
