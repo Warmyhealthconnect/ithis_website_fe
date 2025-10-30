@@ -182,19 +182,24 @@ function Home() {
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/library.png" className='' alt="" />
                   <h3 className='py-4'>Library</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>The College has a spacious library with books, journals, periodicals etc. It has a seperate references sections for both students and faculties 
+                    Internet facilities is also provided in refeernces sections </h5>
                   <button className="know_more">Explore More</button>
                 </div>
                 <div className="home_3_center_div col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/computer.png" className='' alt="" />
                   <h3 className='py-4'>Computer Facilities</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>A computer lab has been set up for providing knowledge to the students. Computer facilities give the students ample opportunities for learning the system and practise. internet facilities 
+                    is also provided
+                  </h5>
                   <button className="know_more">Explore More</button>
                 </div>
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/hostel.png" className='' alt="" />
                   <h3 className='py-4'>Hostel</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>There are seperate hostels for boys and girls .The Girls Hostel is being located in the campus. The hostel amenities and educational facilities are 
+                    helping the students for leading a balanced life of study and leisure.
+                  </h5>
                   <button className="know_more">Explore More</button>
                 </div>
               </div>
