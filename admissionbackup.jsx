@@ -1,82 +1,10 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './Admission.css'
 import Banner from '../../Components/Banner/Banner'
-import { addAdmissionApi } from '../../../services/allApis'
 
 
 function Admission() {
-
-    const [formData, setFormData] = useState({
-        name: "",
-        mobile: "",
-        email: "",
-        dob: "",
-        gender: "",
-        address: "",
-        aadhar: "",
-        email2: "",
-        bloodgroup: "",
-        nationality: "",
-        caste: "",
-        category: "",
-        course: "",
-        qualification: "",
-        lastInstitute: "",
-        qualificationState: "",
-        passingYear: "",
-        registerNumber: "",
-        englishMarks: "",
-        chemistryMarks: "",
-        physicsMarks: "",
-        biologyMarks: "",
-        totalMarks: ""
-    });
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const result = await addAdmissionApi(formData);
-            console.log("Admission submitted:", result);
-            alert("Form submitted successfully!");
-
-            // Reset form
-            setFormData({
-                name: "",
-                mobile: "",
-                email: "",
-                dob: "",
-                gender: "",
-                address: "",
-                aadhar: "",
-                email2: "",
-                bloodgroup: "",
-                nationality: "",
-                caste: "",
-                category: "",
-                course: "",
-                qualification: "",
-                lastInstitute: "",
-                qualificationState: "",
-                passingYear: "",
-                registerNumber: "",
-                englishMarks: "",
-                chemistryMarks: "",
-                physicsMarks: "",
-                biologyMarks: "",
-                totalMarks: ""
-            });
-
-        } catch (err) {
-            console.error("Error submitting form:", err);
-            alert("Something went wrong!");
-        }
-    };
-
     return (
         <>
             <Banner page={'Admission'} />
@@ -108,16 +36,16 @@ function Admission() {
                 {/* Right Form Column */}
                 <div className="col form-column">
                     <div className="form-wrapper">
-                        <form className="form-content" onSubmit={handleSubmit}>
+                        <form className="form-content">
                             {/* Row 1: Name & Mobile */}
                             <div className="row-inputs">
                                 <label>
                                     Name
-                                    <input type="text" name="name" value={formData.name} onChange={handleChange} />
+                                    <input type="text" name="name" />
                                 </label>
                                 <label>
                                     Mobile No
-                                    <input type="number" name="mobile" value={formData.mobile} onChange={handleChange} />
+                                    <input type="number" name="mobile" />
                                 </label>
                             </div>
 
@@ -125,11 +53,11 @@ function Admission() {
                             <div className="row-inputs">
                                 <label>
                                     Email
-                                    <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                                    <input type="email" name="email" />
                                 </label>
                                 <label>
                                     DOB
-                                    <input type="date" name="dob" value={formData.dob} onChange={handleChange} />
+                                    <input type="date" name="dob" />
                                 </label>
                             </div>
 
@@ -138,15 +66,15 @@ function Admission() {
                                 <label className="gender-label d-block text-center mb-2">Gender</label>
                                 <div className="gender-options d-flex justify-content-center gap-4">
                                     <label className="d-flex align-items-center">
-                                        <input type="radio" name="gender" value="male" checked={formData.gender === "male"} onChange={handleChange} />
+                                        <input type="radio" name="gender" value="male" />
                                         <span className="ms-1">Male</span>
                                     </label>
                                     <label className="d-flex align-items-center">
-                                        <input type="radio" name="gender" value="female" checked={formData.gender === "female"} onChange={handleChange} />
+                                        <input type="radio" name="gender" value="female" />
                                         <span className="ms-1">Female</span>
                                     </label>
                                     <label className="d-flex align-items-center">
-                                        <input type="radio" name="gender" value="other" checked={formData.gender === "other"} onChange={handleChange} />
+                                        <input type="radio" name="gender" value="other" />
                                         <span className="ms-1">Other</span>
                                     </label>
                                 </div>
@@ -157,7 +85,7 @@ function Admission() {
                             <div className="row-inputs">
                                 <label className="full-width">
                                     Address
-                                    <input type="text" name="address" value={formData.address} onChange={handleChange} />
+                                    <input type="text" name="address" />
                                 </label>
                             </div>
 
@@ -167,11 +95,11 @@ function Admission() {
                             <div className="row-inputs">
                                 <label>
                                     Aadhar Number
-                                    <input type="number" name="aadhar" value={formData.aadhar} onChange={handleChange} />
+                                    <input type="number" name="aadhar" />
                                 </label>
                                 <label>
-                                    Alternate Email
-                                    <input type="email" name="email2" value={formData.email2} onChange={handleChange} />
+                                    Email
+                                    <input type="email" name="email2" />
                                 </label>
                             </div>
 
@@ -179,7 +107,7 @@ function Admission() {
                             <div className="row row-inputs align-items-start">
                                 <label className='col mx-0'>
                                     Blood Group
-                                    <select name="bloodgroup" value={formData.bloodgroup} onChange={handleChange}>
+                                    <select name="bloodgroup">
                                         <option value=""></option>
                                         <option value="A+">A+</option>
                                         <option value="B+">B+</option>
@@ -192,11 +120,11 @@ function Admission() {
                                     <label className="d-block mb-2">Nationality</label>
                                     <div className='d-flex gap-4'>
                                         <label className="d-flex align-items-center">
-                                            <input type="radio" name="nationality" value="Indian" checked={formData.nationality === "Indian"} onChange={handleChange} />
+                                            <input type="radio" name="nationality" value="Indian" />
                                             <span className="ms-1">Indian</span>
                                         </label>
                                         <label className="d-flex align-items-center">
-                                            <input type="radio" name="nationality" value="Other" checked={formData.nationality === "Other"} onChange={handleChange} />
+                                            <input type="radio" name="nationality" value="Other" />
                                             <span className="ms-1">Other</span>
                                         </label>
                                     </div>
@@ -208,11 +136,11 @@ function Admission() {
                             <div className="row-inputs">
                                 <label>
                                     Caste
-                                    <input type="text" name="caste" value={formData.caste} onChange={handleChange} />
+                                    <input type="text" name="caste" />
                                 </label>
                                 <label>
                                     Category
-                                    <input type="text" name="category" value={formData.category} onChange={handleChange} />
+                                    <input type="text" name="category" />
                                 </label>
                             </div>
 
@@ -222,7 +150,7 @@ function Admission() {
                             <div className="row-inputs">
                                 <label>
                                     Course
-                                    <select name="course" onChange={handleChange}>
+                                    <select name="course">
                                         <option value="">Choose Prefered Course</option>
                                         <option value="bsc">B.Sc Nursing</option>
                                         <option value="dpharm">D.Pharm</option>
@@ -230,7 +158,7 @@ function Admission() {
                                 </label>
                                 <label>
                                     Qualification
-                                    <input type="text" name="qualification" value={formData.qualification} onChange={handleChange} />
+                                    <input type="text" name="qualification" />
                                 </label>
                             </div>
 
@@ -238,11 +166,11 @@ function Admission() {
                             <div className="row-inputs">
                                 <label>
                                     Institute of Last Qualification
-                                    <input type="text" name="lastInstitute" value={formData.lastInstitute} onChange={handleChange} />
+                                    <input type="text" name="lastInstitute" />
                                 </label>
                                 <label>
                                     State of Qualification
-                                    <input type="text" name="qualificationState" value={formData.qualificationState} onChange={handleChange} />
+                                    <input type="text" name="qualificationState" />
                                 </label>
                             </div>
 
@@ -250,11 +178,11 @@ function Admission() {
                             <div className="row-inputs">
                                 <label>
                                     Year of Passing
-                                    <input type="number" name="passingYear" value={formData.passingYear} onChange={handleChange} />
+                                    <input type="number" name="passingYear" />
                                 </label>
                                 <label>
                                     Register Number
-                                    <input type="text" name="registerNumber" value={formData.registerNumber} onChange={handleChange} />
+                                    <input type="text" name="registerNumber" />
                                 </label>
                             </div>
 
@@ -264,38 +192,67 @@ function Admission() {
 
                                 <div className="marks-row">
                                     <label className="marks-label">English</label>
-                                    <input type="number" name="englishMarks" value={formData.englishMarks} onChange={handleChange} className="marks-input" />
+                                    <input type="number" name="englishMarks" className="marks-input" />
                                 </div>
+
                                 <div className="marks-row">
                                     <label className="marks-label">Chemistry</label>
-                                    <input type="number" name="chemistryMarks" value={formData.chemistryMarks} onChange={handleChange} className="marks-input" />
+                                    <input type="number" name="chemistryMarks" className="marks-input" />
                                 </div>
+
                                 <div className="marks-row">
                                     <label className="marks-label">Physics</label>
-                                    <input type="number" name="physicsMarks" value={formData.physicsMarks} onChange={handleChange} className="marks-input" />
+                                    <input type="number" name="physicsMarks" className="marks-input" />
                                 </div>
+
                                 <div className="marks-row">
                                     <label className="marks-label">Biology / Equivalent</label>
-                                    <input type="number" name="biologyMarks" value={formData.biologyMarks} onChange={handleChange} className="marks-input" />
+                                    <input type="number" name="biologyMarks" className="marks-input" />
                                 </div>
+
                                 <div className="marks-row">
                                     <label className="marks-label">Total Marks</label>
-                                    <input type="number" name="totalMarks" value={formData.totalMarks} onChange={handleChange} className="marks-input" />
+                                    <input type="number" name="totalMarks" className="marks-input" />
                                 </div>
                             </div>
 
-                            <div className="form-button text-center mt-4">
-                                <button type="submit" className="btn btn-light">
-                                    Send
-                                </button>
+                            <h3>Documents uploaded along with the application</h3>
+
+                            {/* Row 1: Passport Photo */}
+                            <div className="row-inputs">
+                                <label className="full-width">
+                                    Upload Passport Size Photo
+                                    <input type="file" name="photo" />
+                                </label>
                             </div>
+
+                            {/* Row 2: SSLC / Equivalent Certificate */}
+                            <div className="row-inputs">
+                                <label className="full-width">
+                                    Copy of relevant page of SSLC / Equivalent Board Certificate as proof of Age and DOB (PDF)
+                                    <input type="file" name="ageProof" accept=".pdf" />
+                                </label>
+                            </div>
+
+                            {/* Row 3: Qualifying Exam Certificate / Marksheet */}
+                            <div className="row-inputs">
+                                <label className="full-width">
+                                    Copy of Certificate and Marklist of Qualifying Examination (Plus Two / CBSE / PDF of Result Sheet from Website)
+                                    <input type="file" name="qualifyingCert" accept=".pdf" />
+                                </label>
+                            </div>
+
 
                         </form>
 
 
 
                         {/* Fixed Submit Button */}
-
+                        <div className="form-button">
+                            <button type="submit" className="btn btn-light">
+                                Send
+                            </button>
+                        </div>
                     </div>
                 </div>
 

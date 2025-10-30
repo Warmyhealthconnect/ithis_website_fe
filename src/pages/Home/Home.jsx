@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom';
+import { getLatestNewsApi } from '../../../services/allApis';
 
 
 function Home() {
@@ -22,13 +23,21 @@ function Home() {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    getLatestNews()
     const video = videoRef.current;
     if (video) {
       video.play().catch(() => {
-        console.log("Autoplay prevented, user interaction required");
+        // console.log("Autoplay prevented, user interaction required");
       });
     }
   }, []);
+
+  const [news, setNews] = useState([])
+
+  const getLatestNews = async () => {
+    const res = await getLatestNewsApi()
+    setNews(res.data)
+  }
 
 
 
@@ -101,7 +110,10 @@ function Home() {
         </section>
 
         <section className='broadcast-section'>
-          <p className='broadcast-text'>News and Announcements</p>
+
+          {news && <p className="broadcast-text">{news.description}</p>}
+
+
         </section>
 
         {/* Scrollable Content */}

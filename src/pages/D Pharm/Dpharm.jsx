@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Dpharm.css'
 import Banner from '../../Components/Banner/Banner'
 import Modalcomponent from '../../Components/Modal/Modalcomponent'
+import { getAllDpharmApi } from '../../../services/allApis'
 
 function Dpharm() {
+
+  useEffect(() => {
+    getAllDpharm();
+  }, []);
+
+  const [dpharm, setDpharm] = useState([])
+
+  const getAllDpharm = async () => {
+    const res = await getAllDpharmApi()
+    console.log(res)
+    setDpharm(res.data)
+  }
   return (
     <>
 
@@ -37,14 +50,20 @@ function Dpharm() {
               <th>Duration</th>
               <th>Available Seat</th>
               <th>Eligibility</th>
+              <th>Academic Control</th>
+              <th>Control</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="table-info">
-              <td>2 year</td>
-              <td>11</td>
-              <td>Plus two with PCB combination minimum 50% mark</td>
-            </tr>
+            {dpharm.map(item => (
+              <tr className="table-info">
+                <td>{item.duration}</td>
+                <td>{item.seat}</td>
+                <td>{item.eligibility}</td>
+                <td>{item.academiccontrol}</td>
+                <td>{item.control}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </section>

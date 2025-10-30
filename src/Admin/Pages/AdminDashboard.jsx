@@ -8,6 +8,9 @@ import StudentDetails from "../Components/StudentDetails/StudentDetails";
 import Queries from "../Components/Queries/Queries";
 import FeeEnquiry from "../Components/FeeEnquiry/FeeEnquiry";
 import CareerSection from "../Components/CareerSection/CareerSection";
+import AdmissionPage from "../Components/Admissionpage/AdmissionPage";
+import AdmissionNursing from "../Components/Admissionnursing/AdmissionNursing";
+import { Link } from "react-router-dom";
 
 function AdminDashboard() {
   const [activeSection, setActiveSection] = useState("news");
@@ -30,6 +33,10 @@ function AdminDashboard() {
         return <FeeEnquiry/>
       case "career":
         return <CareerSection/>
+      case "admission":
+        return <AdmissionPage/>
+      case "admission2":
+        return <AdmissionNursing/>
       default:
         return <p>Select a section from the sidebar.</p>;
     }
@@ -38,9 +45,9 @@ function AdminDashboard() {
   return (
     <div className="admin-dashboard">
       <aside className="sidebar">
-        <div className="d-flex justify-content-center">
+        <Link to={'/'} className="d-flex justify-content-center">
           <img src="/footerLogo.png" className="img-fluid w-75" alt="" />
-        </div>
+        </Link>
         <hr className=""/>
         <ul>
           <li onClick={() => setActiveSection("news")}>News</li>
@@ -51,6 +58,8 @@ function AdminDashboard() {
           <li onClick={() => setActiveSection("queries")}>Queries</li>
           <li onClick={() => setActiveSection("fee")}>Fee Enquiry</li>
           <li onClick={() => setActiveSection("career")}>Career</li>
+          <li onClick={() => setActiveSection("admission")}>Admission-ithis medcity</li>
+          <li onClick={() => setActiveSection("admission2")}>Admission-ithis nursing</li>
         </ul>
       </aside>
 
