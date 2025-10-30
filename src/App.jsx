@@ -16,7 +16,7 @@ import Dpharm from './pages/D Pharm/Dpharm'
 import Carrerdetails from './pages/Carrer details/Carrerdetails'
 import AdminDashboard from './Admin/Pages/AdminDashboard'
 import { ToastContainer } from 'react-toastify'
-import ComingSoon from './pages/ComingSoon/ComingSoon'
+import ComingSoon from './pages/Coming Soon/ComingSoon'
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/dpharm' element={<Dpharm />} />
         <Route path='/bscnursing' element={<BscNursing />} />
-        <Route path='/careerdetails' element={<ComingSoon />} />
+        <Route path='/careerdetails' element={<Carrerdetails />} />
 
 
         {/* New Admin Route */}

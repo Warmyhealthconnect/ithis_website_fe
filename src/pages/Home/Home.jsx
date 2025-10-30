@@ -70,15 +70,15 @@ function Home() {
       background: "#F5F5F5"
     },
     {
-      name: "Graduate Programs",
-      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      name: "Faculty & Staff",
+      para: "Our faculty members are distinguished professionals, educators, and researchers dedicated to academic excellence and mentorship.",
       logo: "/homepage/faculity.png",
       color: "black",
       background: "#D2DCE9"
     },
     {
-      name: "Graduate Programs",
-      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      name: "Infrastructure",
+      para: "Our campus is equipped with advanced technology and a comfortable learning environment to support education, research, and community engagement.",
       logo: "/homepage/infra.png",
       color: "black",
       background: "#F5F5F5"
@@ -111,7 +111,7 @@ function Home() {
 
         <section className='broadcast-section'>
 
-          {news && <p className="broadcast-text">{news.description}</p>}
+          {news && <p className="broadcast-text">Ithis Medcity College is a premier institution committed to excellence in healthcare education and professional training.</p>}
 
 
         </section>
@@ -194,21 +194,24 @@ function Home() {
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/Homeimages/library.png" className='' alt="" />
                   <h3 className='py-4'>Library</h3>
-                  <h5 className='pb-4'>The College has a spacious library with books, journals, periodicals etc. It has a seperate references sections for both students and faculties
-                    Internet facilities is also provided in refeernces sections. </h5>
+                  <h5 className='pb-4'>The College has a spacious library with books, journals, periodicals etc. It has a seperate references sections for both students and faculties 
+                    Internet facilities is also provided in refernces sections </h5>
                   <button className="know_more">Explore More</button>
                 </div>
                 <div className="home_3_center_div col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/Homeimages/computer.png" className='' alt="" />
                   <h3 className='py-4'>Computer Facilities</h3>
-                  <h5 className='pb-4'>A computer lab has been set up for providing knowledge to the students. Computer facilities give the students ample opportunities for learning the system and practise. internet facilities is also provided. </h5>
+                  <h5 className='pb-4'>A computer lab has been set up for providing knowledge to the students. Computer facilities give the students ample opportunities for learning the system and practise. internet facilities 
+                    is also provided
+                  </h5>
                   <button className="know_more">Explore More</button>
                 </div>
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/Homeimages/hostel.png" className='' alt="" />
                   <h3 className='py-4'>Hostel</h3>
-                  <h5 className='pb-4'>here are seperate hostels for boys and girls .The Girls Hostel is being located in the campus. The hostel amenities and educational facilities are
-                    helping the students for leading a balanced life of study and leisure. </h5>
+                  <h5 className='pb-4'>There are seperate hostels for boys and girls .The Girls Hostel is being located in the campus. The hostel amenities and educational facilities are 
+                    helping the students for leading a balanced life of study and leisure.
+                  </h5>
                   <button className="know_more">Explore More</button>
                 </div>
               </div>
@@ -243,10 +246,9 @@ function Home() {
                       <div className="why-choose-icon">
                         <img src={item.logo} width={'12%'} alt="" />
                       </div>
-                      <h2>Graduate Programs</h2>
+                      <h2>{item.name}</h2>
                       <p style={{ color: item.color }}>
-                        Ithis Medicity provides D.Pharm and B.Sc Nursing programs, combining
-                        comprehensive theoretical knowledge.
+                        {item.para}
                       </p>
                     </div>
                   ))
