@@ -47,6 +47,7 @@ function Header() {
                 alt="Ithis Medicity Logo"
                 width="150"
                 style={{ transition: '0.3s ease all' }}
+                className="img-fluid"
               />
             </Link>
           </div>

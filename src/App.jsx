@@ -36,11 +36,11 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/courses' element={<Courses />} />
         <Route path='/facilities' element={<Facilities />} />
-        <Route path='/career' element={<Career />} />
+        <Route path='/career' element={<ComingSoon />} />
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/dpharm' element={<Dpharm />} />
         <Route path='/bscnursing' element={<BscNursing />} />
-        <Route path='/careerdetails' element={<Carrerdetails />} />
+        <Route path='/careerdetails' element={<ComingSoon />} />
 
 
         {/* New Admin Route */}

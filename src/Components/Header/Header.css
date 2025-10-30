@@ -166,7 +166,7 @@
 }
 
 .header-container.light-nav .btn {
-  background-color: #000;
+  background-color: var(--component);
   color: #fff;
 }
 
@@ -234,7 +234,8 @@
 /* Mobile rules */
 @media (max-width: 900px) {
   .header-logo{
-    margin-left: -20px;
+    margin-left: -40px;
+    width: 20vw;
   }
   /* show hamburger */
   .hamburger {
@@ -388,5 +389,7 @@
   .sidebar-apply .btn {
     width: 100%;
     border-radius: 8px;
+    background-color: white;
+    font-weight: 700;
   }
 }
