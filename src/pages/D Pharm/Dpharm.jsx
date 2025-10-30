@@ -50,20 +50,20 @@ function Dpharm() {
               <th>Duration</th>
               <th>Available Seat</th>
               <th>Eligibility</th>
-              <th>Academic Control</th>
-              <th>Control</th>
+              {/* <th>Academic Control</th>
+              <th>Control</th> */}
             </tr>
           </thead>
           <tbody>
-            {dpharm.map(item => (
+          
               <tr className="table-info">
-                <td>{item.duration}</td>
-                <td>{item.seat}</td>
-                <td>{item.eligibility}</td>
-                <td>{item.academiccontrol}</td>
-                <td>{item.control}</td>
+                <td>2 year</td>
+                <td>11</td>
+                <td>Plus two with PCB combination minimum 50% mark</td>
+                {/* <td>{item.academiccontrol}</td>
+                <td>{item.control}</td> */}
               </tr>
-            ))}
+            
           </tbody>
         </table>
       </section>
