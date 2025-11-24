@@ -1,10 +1,82 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import './Admission.css'
 import Banner from '../../Components/Banner/Banner'
+import { addAdmissionApi } from '../../../services/allApis'
 
 
 function Admission() {
+
+    const [formData, setFormData] = useState({
+        name: "",
+        mobile: "",
+        email: "",
+        dob: "",
+        gender: "",
+        address: "",
+        aadhar: "",
+        email2: "",
+        bloodgroup: "",
+        nationality: "",
+        caste: "",
+        category: "",
+        course: "",
+        qualification: "",
+        lastInstitute: "",
+        qualificationState: "",
+        passingYear: "",
+        registerNumber: "",
+        englishMarks: "",
+        chemistryMarks: "",
+        physicsMarks: "",
+        biologyMarks: "",
+        totalMarks: ""
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const result = await addAdmissionApi(formData);
+            console.log("Admission submitted:", result);
+            alert("Form submitted successfully!");
+
+            // Reset form
+            setFormData({
+                name: "",
+                mobile: "",
+                email: "",
+                dob: "",
+                gender: "",
+                address: "",
+                aadhar: "",
+                email2: "",
+                bloodgroup: "",
+                nationality: "",
+                caste: "",
+                category: "",
+                course: "",
+                qualification: "",
+                lastInstitute: "",
+                qualificationState: "",
+                passingYear: "",
+                registerNumber: "",
+                englishMarks: "",
+                chemistryMarks: "",
+                physicsMarks: "",
+                biologyMarks: "",
+                totalMarks: ""
+            });
+
+        } catch (err) {
+            console.error("Error submitting form:", err);
+            alert("Something went wrong!");
+        }
+    };
+
     return (
         <>
             <Banner page={'Admission'} />
@@ -347,6 +419,8 @@ function Admission() {
 
 
                         </form>
+
+
 
                         {/* Submit Button */}
                         <div className="form-button">

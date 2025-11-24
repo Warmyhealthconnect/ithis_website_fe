@@ -16,6 +16,7 @@ import Dpharm from './pages/D Pharm/Dpharm'
 import Carrerdetails from './pages/Carrer details/Carrerdetails'
 import AdminDashboard from './Admin/Pages/AdminDashboard'
 import { ToastContainer } from 'react-toastify'
+import ComingSoon from './pages/Coming Soon/ComingSoon'
 
 
 function App() {

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "./BscNursingSection.css";
+import { getAllNursingApi,editNursingApi,deleteNewsApi,addNursingApi } from "../../../../services/allApis";
 
 function BscNursingSection() {
   const [courses, setCourses] = useState([
-    { id: 1, duration: "4 Years", seat: 100, eligibility: "10+2 with Science" },
+    { id: 1, duration: "4 Years", seat: 100, eligibility: "10+2 with Science",academiccontrol:"pla",control:"pla" },
   ]);
 
   const [formData, setFormData] = useState({
     duration: "",
     seat: "",
     eligibility: "",
+    academiccontrol: "",
+    control: "",
   });
 
   const [editingId, setEditingId] = useState(null);
@@ -86,6 +89,29 @@ function BscNursingSection() {
           />
         </div>
 
+        <div className="form-group">
+          <label>Accademic Control</label>
+          <input
+            type="text"
+            name="academiccontrol"
+            value={formData.academiccontrol}
+            onChange={handleChange}
+            placeholder="calicut university"
+          />
+        </div>
+        <div className="form-group">
+          <label>Control</label>
+          <input
+            type="text"
+            name="control"
+            value={formData.control}
+            onChange={handleChange}
+            placeholder="Total Seats: 50
+            Govt – 50%
+            Mgt. – 50% "
+          />
+        </div>
+
         <button type="submit">
           {editingId ? "Update Course" : "Add Course"}
         </button>
@@ -99,6 +125,8 @@ function BscNursingSection() {
             <th>Duration</th>
             <th>Seat</th>
             <th>Eligibility</th>
+            <th>Accademic Control</th>
+            <th>Control</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -109,6 +137,8 @@ function BscNursingSection() {
               <td>{c.duration}</td>
               <td>{c.seat}</td>
               <td>{c.eligibility}</td>
+              <td>{c.academiccontrol}</td>
+              <td>{c.control}</td>
               <td>
                 <button onClick={() => handleEdit(c.id)}>Edit</button>
                 <button onClick={() => handleDelete(c.id)}>Delete</button>

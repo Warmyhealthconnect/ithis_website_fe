@@ -1,10 +1,11 @@
 .banner-container {
   position: relative;
+  width: 100%;
   height: 480px;
-  background: url('/bannerimg.jpg') center 20% / cover no-repeat;
+  background: url('/bannerimg.jpg') center center / cover no-repeat;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   text-align: center;
   overflow: hidden;
 }
@@ -26,72 +27,187 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 60px;
+  padding: 0 16px;
 }
 
 .heading {
-  font-size: 56px;
+  font-size: clamp(24px, 5vw, 56px);
   font-weight: 600;
   color: #fff;
   margin: 0;
+  line-height: 1.3;
+  text-align: center;
 }
 
-/* container for the small breadcrumb pieces */
+/* Breadcrumb Container */
 .banner-button {
   display: flex;
   align-items: center;
-  gap: 0;              /* we control spacing per element below */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
   font-size: 18px;
 }
 
-/* home icon circle */
+/* Home Icon Circle */
 .home-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;             /* circle size */
+  width: 40px;
   height: 40px;
   border-radius: 50%;
   color: #fff;
   text-decoration: none;
-  font-size: 16px;         /* icon size */
-  padding: 0;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-.home-btn:hover{
-  color: rgba(255, 255, 255, 0.516);
+.home-btn:hover {
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* arrow placed tightly after the home icon */
 .breadcrumb-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-left: 6px;     /* small gap between home circle and chevron — lower for closer */
-  margin-right: 10px;   /* gap after chevron before the "Home" text */
   font-size: 16px;
   color: #fff;
-  transform: translateY(1px); /* micro vertical align */
+  margin: 0 8px;
 }
 
-/* the "Home" label after the arrow */
 .breadcrumb-text {
   color: #fff;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.1px;
-  display: inline-block;
 }
 
-/* hover nicety */
-.home-btn:hover,
-.breadcrumb-text:hover {
-  opacity: 0.95;
+/* --- Responsive Design --- */
+
+/* Tablets (max 992px) */
+@media (max-width: 992px) {
+  .banner-container {
+    height: 380px;
+  }
+
+  .heading {
+    font-size: clamp(28px, 6vw, 46px);
+  }
+
+  .banner-contents {
+    margin-bottom: 50px;
+  }
+
+  .home-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .breadcrumb-arrow {
+    margin: 0 6px;
+    font-size: 15px;
+  }
+
+  .breadcrumb-text {
+    font-size: 16px;
+  }
 }
 
-/* responsive tweaks */
+/* Large Mobiles (max 700px) */
 @media (max-width: 700px) {
-  .heading { font-size: 36px; }
-  .home-btn { width: 34px; height: 34px; font-size: 14px; }
-  .breadcrumb-arrow { margin-left: 4px; margin-right: 8px; font-size: 14px; transform: translateY(0); }
-  .breadcrumb-text { font-size: 16px; }
+  .banner-container {
+    height: 45vh;
+    min-height: 300px;
+    background-position: center center;
+  }
+
+  .heading {
+    font-size: clamp(24px, 7vw, 40px);
+  }
+
+  .home-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .breadcrumb-arrow {
+    margin: 0 5px;
+    font-size: 14px;
+  }
+
+  .breadcrumb-text {
+    font-size: 15px;
+  }
+
+  .banner-contents {
+    margin-bottom: 40px;
+  }
+}
+
+/* Small Mobiles (max 480px) */
+@media (max-width: 480px) {
+  .banner-container {
+    height: 40vh;
+    min-height: 220px;
+  }
+
+  .heading {
+    font-size: clamp(20px, 7vw, 32px);
+  }
+
+  .home-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .breadcrumb-arrow {
+    margin: 0 4px;
+    font-size: 13px;
+  }
+
+  .breadcrumb-text {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Devices (max 360px) */
+@media (max-width: 360px) {
+  .banner-container {
+    height: 38vh;
+    min-height: 200px;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .banner-button {
+    font-size: 13px;
+    gap: 4px;
+  }
+
+  .home-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .breadcrumb-text {
+    font-size: 13px;
+  }
+}
+
+/* Landscape Mode Tweaks */
+@media (max-height: 450px) and (orientation: landscape) {
+  .banner-container {
+    height: 60vh;
+  }
+
+  .banner-contents {
+    margin-bottom: 20px;
+  }
 }
