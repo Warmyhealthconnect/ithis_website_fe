@@ -103,7 +103,6 @@ function Home() {
             className="parallax-video"
           >
             <source src="/videos/ithis.webm" type="video/webm" />
-            <source src="/videos/ithis.mp4" type="video/mp4" />
           </video>
           <div className="banner-text" style={{ opacity }}>
             <h1>CENTER OF <br /> EXCELLENCE FOR <br /> NURSING EDUCATION</h1>
