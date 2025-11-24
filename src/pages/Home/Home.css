@@ -98,7 +98,7 @@
        and perfectly aligns the second copy at the start of the container. 
        The animation then resets to 0% instantly, creating the seamless loop. */
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -384,7 +384,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 30px;
   width: 100%;
   gap: 10px;
 }

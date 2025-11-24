@@ -12,8 +12,7 @@ function BscNursing() {
                 <div className="row justify-content-between m-5">
                     <div className="col-7 ">
                         <h1>BSc Nursing</h1>
-                        <h3 className='py-5'>B.Sc Nursing is a four-year program that combines theoretical knowledge and practical training to develop skilled,
-                            compassionate nurses ready to work in hospitals, clinics, and community health settings.
+                        <h3 className='py-5'>B.Sc Nursing is a four-year program that combines theoretical knowledge and practical training to develop skilled, compassionate nurses ready to work in hospitals, clinics, and community health settings. It is not just a course, but a heartfelt journey where students learn to heal with both science and empathy. Every step in this program shapes them into caregivers who bring hope, comfort, and strength to those who need it most
                         </h3>
                         <div>
                             <button className="apply-btn btn rounded-pill  me-4">Apply now</button>

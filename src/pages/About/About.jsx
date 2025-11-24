@@ -5,7 +5,7 @@ import Banner from '../../Components/Banner/Banner';
 function About() {
   return (
     <>
-        <Banner page={'About Us'}/>
+      <Banner page={'About Us'} />
 
 
 
@@ -17,11 +17,7 @@ function About() {
               About Ithis Medicity Nursing College
             </h3>
             <p className="fs-5 lh-lg text-muted text-center text-md-start">
-              At Ithis Medicity Nursing College, we are dedicated to shaping future healthcare professionals with excellence
-              and compassion. Our institution offers a vibrant learning environment that blends theory with real-world practice.
-              With modern infrastructure and advanced simulation labs, students receive world-class training and guidance. Experienced faculty ensure every learner
-              gains the confidence and skills to excel in nursing. We focus on ethics, empathy, and leadership — the true essence of nursing care. Through innovation and dedication,
-              we prepare nurses who make a difference. Join us, where education meets excellence and passion becomes purpose.
+              Knowledge, compassion, and purpose come together in this caring environment at Ithis Medicity Nursing College. Our goal is to develop competent, compassionate nurses who provide confident, empathetic care. Ithis Hospital's cutting-edge labs, contemporary classrooms, and practical clinical training give students practical experience that fortifies their hearts and abilities. Our committed faculty members patiently and passionately mentor each student, ensuring that they develop into responsible, caring adults. At Ithis, education is a journey of humanity, service, and making a positive impact on people's lives.
             </p>
           </div>
           {/* Image Section */}
@@ -41,7 +37,7 @@ function About() {
           <div className=" col-sm d-flex align-items-center justify-content-center text-white">
             <div className='vision_card'>
               <h3>Our Mission</h3>
-              <p>To deliver high-quality nursing education that integrates scientific knowledge, clinical expertise, and compassionate care. We aim to empower our students to become skilled, ethical, and confident healthcare professionals who make a meaningful impact in their communities. </p>
+              <p>Our mission at Ithis is to heal with compassion, serve with integrity, and uplift every life we touch. We strive to provide trusted healthcare and nurturing education that inspire hope, restore strength, and shape caring professionals for the future. With every patient we comfort and every student we guide, we carry out our promise: treating each life with dignity, kindness, and heartfelt care.</p>
             </div>
           </div>
 
@@ -49,13 +45,13 @@ function About() {
           <div className="col-sm d-flex align-items-center justify-content-center text-white">
             <div className='vision_card'>
               <h3>Our Vision</h3>
-              <p>To be a leading institution recognized for academic excellence, innovation, and human-centered nursing education — nurturing professionals who inspire trust, uphold integrity, and transform healthcare globally.</p>
+              <p>At Ithis Nursing College, our vision is to create a world where every nurse leads with compassion, confidence, and courage. We aspire to be a guiding light in nursing education—nurturing professionals who heal with heart, serve with dignity, and bring hope to every life they touch. We envision a future where our students become the strength of healthcare, spreading kindness, excellence, and humanity wherever they go.</p>
             </div>
           </div>
 
           {/* Third column — image lifted above section */}
-          <div className=" col d-flex align-items-center justify-content-center position-relative" style={{ overflow: "visible" }}> 
-            <img src="/Aboutimages/nurse_img.png" className="img-fluid position-absolute start-50 translate-middle-x" style={{top: "-85px",height: "120%", zIndex: 10,}} alt="nurse"/>
+          <div className=" col d-flex align-items-center justify-content-center position-relative" style={{ overflow: "visible" }}>
+            <img src="/Aboutimages/nurse_img.png" className="img-fluid position-absolute start-50 translate-middle-x" style={{ top: "-85px", height: "120%", zIndex: 10, }} alt="nurse" />
           </div>
         </div>
       </section>

@@ -48,28 +48,28 @@ function Home() {
   const whychoose = [
     {
       name: "Graduate Programs",
-      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      para: "In order to have a significant impact on healthcare, our graduate programs assist students in developing advanced skills, self-assurance, and compassion.",
       logo: "/homepage/graduate.png",
       color: "white",
       background: "var(--main-color)"
     },
     {
       name: "Undergraduate Programs",
-      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      para: "Our programs shape enthusiastic, skilled healthcare professionals through caring guidance, practical training, and strong academic support—helping students find purpose and build a meaningful future in healthcare.",
       logo: "/homepage/undergraduate.png",
       color: "black",
       background: "#F5F5F5"
     },
     {
-      name: "Graduate Programs",
-      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      name: "Faculty & Staff",
+      para: "Our faculty and staff guide students with expertise, care, and real-world experience—helping them grow with confidence and compassion for a successful future in healthcare.",
       logo: "/homepage/faculity.png",
       color: "black",
       background: "#D2DCE9"
     },
     {
-      name: "Graduate Programs",
-      para: "Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge",
+      name: "Infrastructure",
+      para: "Our contemporary, friendly campus offers the facilities students require to study, practise and develop self-assurance.",
       logo: "/homepage/infra.png",
       color: "black",
       background: "#F5F5F5"
@@ -101,7 +101,7 @@ function Home() {
         </section>
 
         <section className='broadcast-section'>
-          <p className='broadcast-text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non dolorum ipsum, asperiores enim quia voluptas veniam, deleniti perferendis perspiciatis facilis natus distinctio doloribus aperiam quibusdam mollitia quis beatae debitis animi!</p>
+          <p className='broadcast-text'>Alerts will be updated soon</p>
         </section>
 
         {/* Scrollable Content */}
@@ -110,7 +110,7 @@ function Home() {
             <section className='home_section_1'>
               <div>
                 <h6>Ithis Medicity</h6>
-                <h1>Ithis Medicity Empowering Future Leaders in <br /> Healthcare Through Excellence and Integrity</h1>
+                <h1>Ithis Medicity: Creating Healthcare Heroes of <br /> the Future with Hope and Heart.</h1>
               </div>
             </section>
             <section className='home_section_2 '>
@@ -119,8 +119,9 @@ function Home() {
                   <img src="/Homeimages/home_section_2_img.png" className='img-fluid' alt="" />
                 </div>
                 <div className="col-6 d-flex flex-column justify-content-between">
-                  <h4>Ithis Nursing College, established in 2025, is a leading institution dedicated to advancing nursing education and healthcare excellence in Kerala.
-                    The college aims to nurture skilled, compassionate, and ethical nursing professionals who can meet the evolving demands of the healthcare industry
+                  <h4>Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
+
+
                   </h4>
                   <div className="d-flex justify-content-start">
                     <Link to="/about">
@@ -156,11 +157,7 @@ function Home() {
             <section className='course-section'>
               <div className="course-section-txts">
                 <h1>Courses</h1>
-                <p>Ithis Medicityprovides D.Pharm and B.Sc Nursing
-                  programs, combining comprehensive theoretical
-                  knowledge with practical training to prepare
-                  students for successful careers in pharmacy
-                  and nursing</p>
+                <p>Through practical instruction and professional guidance, our B.Sc. Nursing and D.Pharm programs develop skilled, caring professionals.</p>
               </div>
 
               <div className="row course-cards-container">
@@ -182,19 +179,19 @@ function Home() {
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/library.png" className='' alt="" />
                   <h3 className='py-4'>Library</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>Our library is a peaceful, inspiring space filled with nursing books, journals, and digital resources. With comfortable seating and a calm atmosphere, it offers students the perfect place to study, explore, and grow in their academic journey.</h5>
                   <button className="apply-btn btn rounded-pill me-4">Explore More</button>
                 </div>
                 <div className="home_3_center_div col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/computer.png" className='' alt="" />
                   <h3 className='py-4'>Computer Facilities</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>Our modern computer lab offers high-speed systems, updated software, and a comfortable workspace—giving students the tools they need for research, digital learning, and skill development in a smooth, efficient environment.</h5>
                   <button className="apply-btn btn rounded-pill me-4">Explore More</button>
                 </div>
                 <div className="col d-flex flex-column align-items-center justify-content-evenly py-5">
                   <img src="/public/Homeimages/hostel.png" className='' alt="" />
                   <h3 className='py-4'>Hostel</h3>
-                  <h5 className='pb-4'>Ithis Medicityprovides D.Pharm and B.Sc Nursing programs, combining comprehensive theoretical knowledge </h5>
+                  <h5 className='pb-4'>Our hostel provides a secure, cosy, and welcoming environment for students to unwind, learn, and develop. It offers the ideal home away from home with spotless rooms, compassionate staff, and a tranquil setting.</h5>
                   <button className="apply-btn btn rounded-pill me-4">Explore More</button>
                 </div>
               </div>
@@ -208,11 +205,11 @@ function Home() {
                 </div>
                 <div className="col">
                   <img src="/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" className="circular-img" />
-                  <h5 className='py-3'>iet College of Pharmacy</h5>
+                  <h5 className='py-3'>iet Institute of Allied Health Science</h5>
                 </div>
                 <div className="col">
                   <img src="/Homeimages/ithis_hospital.png" alt="Logo" className="circular-img px-4" />
-                  <h5 className='py-3'>iet College of Pharmacy</h5>
+                  <h5 className='py-3'>ithis hospital</h5>
                 </div>
               </div>
             </section>
@@ -229,10 +226,9 @@ function Home() {
                       <div className="why-choose-icon">
                         <img src={item.logo} width={'12%'} alt="" />
                       </div>
-                      <h2>Graduate Programs</h2>
+                      <h2>{item.name}</h2>
                       <p style={{ color: item.color }}>
-                        Ithis Medicity provides D.Pharm and B.Sc Nursing programs, combining
-                        comprehensive theoretical knowledge.
+                        {item.para}
                       </p>
                     </div>
                   ))

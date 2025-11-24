@@ -14,8 +14,7 @@ function Dpharm() {
           <div className="col-7 ">
             <h1>D Pharm</h1>
             <h3 className='py-5'>
-              D Pharm (Diploma in Pharmacy) is a two-year program that trains students in pharmaceutical sciences
-              and practical skills like dispensing and drug management. Graduates can work in hospitals, pharmacies, industries, and regulatory sectors after registration.
+              D Pharm or Diploma in Pharmacy is a two-year course dealing with pharmaceutical sciences and practical skills regarding dispensing and management of drugs. Graduates after registration can be employed in hospitals, pharmacies, industries, and the regulatory sector. The course molds the student into a responsible professional who develops a caring attitude and a deep sense of duty while handling medicines. It encourages them to be a trusted support for the patients and ensures safe and effective healing.
             </h3>
             <div>
               <button className="apply-btn btn rounded-pill  me-4">Apply now</button>
