@@ -45,11 +45,13 @@ function Home() {
   const course = [
     {
       name: "D Pharm",
-      image: "/homepage/dpharm.png"
+      image: "/homepage/dpharm.png",
+      link: '/dpharm'
     },
     {
       name: "BSC Nursing",
-      image: "/homepage/bsc.png"
+      image: "/homepage/bsc.png",
+      link: '/bscnursing'
     },
   ]
 
@@ -104,8 +106,9 @@ function Home() {
             <source src="/videos/ithis.mp4" type="video/mp4" />
           </video>
           <div className="banner-text" style={{ opacity }}>
-            <h1>CENTER OF EXCELLENCE <br /> FOR NURSING EDUCATION</h1>
-            <p>a world where knowledge meets kindness, science meets service, <br />and learning becomes a lifelong commitment to humanity.</p>
+            <h1>CENTER OF <br /> EXCELLENCE FOR <br /> NURSING EDUCATION</h1>
+            <p>a world where knowledge meets kindness, science meets service,and <br /> learning becomes a lifelong commitment to humanity.</p>
+            <button className='mt-4 banner-btn'>Learn more</button>
           </div>
         </section>
 
@@ -127,12 +130,12 @@ function Home() {
                 <div className="col-5">
                   <img src="/Homeimages/home_section_2_img.png" className='img-fluid' alt="" />
                 </div>
-                <div className="col-6 d-flex flex-column justify-content-between">
-                  <h4>Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
+                <div className="col-6 d-flex flex-column justify-content-around">
+                  <h2 style={{ textAlign: "start" }}>Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
 
 
-                  </h4>
-                  <div className="d-flex justify-content-start">
+                  </h2>
+                  <div className="d-flex justify-content-start mt-5">
                     <Link to="/about">
                       <button className="know_more">
                         Know More
@@ -166,16 +169,19 @@ function Home() {
             <section className='course-section'>
               <div className="course-section-txts">
                 <h1>Courses</h1>
-                <p>Through practical instruction and professional guidance, our B.Sc. Nursing and D.Pharm programs develop skilled, caring professionals.</p>
+                <p>Through practical instruction and professional guidance, our B.Sc. Nursing and D.Pharm programs <br /> develop skilled, caring professionals.</p>
               </div>
 
               <div className="row course-cards-container">
                 {
                   course.map(item => (
-                    <div className='col course-card shadow'>
-                      <img src={item.image} className='img-fluid course-card-img' alt="" />
-                      <div className="card-overlay">{item.name}</div>
-                    </div>
+                    <Link className='col course-card shadow' to={item.link}>
+                      <div onClick={() => window.scrollTo(0, 0)}>
+                        <img src={item.image} className='img-fluid course-card-img' />
+                        <div className="card-overlay">{item.name}</div>
+                      </div>
+                    </Link>
+
                   ))
                 }
 
@@ -215,7 +221,6 @@ function Home() {
                 <div className="col">
                   <img src="/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" className="circular-img" />
                   <h5 className='py-3'>iet Institute of Allied Health Science</h5>
-                  <h5 className='py-3'>iet Institute of Allied Health Science</h5>
                 </div>
                 <div className="col">
                   <img src="/Homeimages/ithis_hospital.png" alt="Logo" className="circular-img px-4" />
@@ -232,22 +237,24 @@ function Home() {
               <div className="why-choose-box-container">
                 {
                   whychoose.map(item => (
-                    <div className="why-choose-box" style={{ backgroundColor: item.background, color: item.color }}>
+                    <div className="why-choose-box"
+                      style={{ backgroundColor: item.background, color: item.color }}
+                    >
                       <div className="why-choose-icon">
                         <img src={item.logo} width={'12%'} alt="" />
                       </div>
+
                       <h2>{item.name}</h2>
-                      <h2>{item.name}</h2>
-                      <p style={{ color: item.color }}>
-                        {item.para}
+
+                      <p style={{ color: item.color, fontSize: '15px' }}>
                         {item.para}
                       </p>
                     </div>
                   ))
                 }
-
               </div>
             </section>
+
           </div>
         </section>
 

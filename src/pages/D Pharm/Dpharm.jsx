@@ -6,17 +6,22 @@ import { getAllDpharmApi } from '../../../services/allApis'
 
 function Dpharm() {
 
+  // useEffect(() => {
+  //   getAllDpharm();
+  // }, []);
+
+  // const [dpharm, setDpharm] = useState([])
+
+  // const getAllDpharm = async () => {
+  //   const res = await getAllDpharmApi()
+  //   console.log(res)
+  //   setDpharm(res.data)
+  // }
+
   useEffect(() => {
-    getAllDpharm();
+    window.scrollTo(0, 0);
   }, []);
 
-  const [dpharm, setDpharm] = useState([])
-
-  const getAllDpharm = async () => {
-    const res = await getAllDpharmApi()
-    console.log(res)
-    setDpharm(res.data)
-  }
   return (
     <>
 
@@ -54,15 +59,15 @@ function Dpharm() {
             </tr>
           </thead>
           <tbody>
-          
-              <tr className="table-info">
-                <td>2 year</td>
-                <td>11</td>
-                <td>Plus two with PCB combination minimum 50% mark</td>
-                {/* <td>{item.academiccontrol}</td>
+
+            <tr className="table-info">
+              <td>2 year</td>
+              <td>11</td>
+              <td>Plus two with PCB combination minimum 50% mark</td>
+              {/* <td>{item.academiccontrol}</td>
                 <td>{item.control}</td> */}
-              </tr>
-            
+            </tr>
+
           </tbody>
         </table>
       </section>

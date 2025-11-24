@@ -24,8 +24,8 @@ function Footer() {
             <ul className='list-unstyled d-flex flex-column gap-2 gap-md-4'>
               <li><Link className='text-decoration-none text-light' to="/">Home</Link></li>
               <li><Link className='text-decoration-none text-light' to="/about">About</Link></li>
-              <li><Link className='text-decoration-none text-light' to="/bscnursing">BSc Nursing</Link></li>
-              <li><Link className='text-decoration-none text-light' to="/dpharm">D Pharm </Link></li>
+              <li><Link className='text-decoration-none text-light' onClick={() => window.scrollTo(0, 0)} to="/bscnursing">BSc Nursing</Link></li>
+              <li><Link className='text-decoration-none text-light' onClick={() => window.scrollTo(0, 0)} to="/dpharm">D Pharm </Link></li>
             </ul>
             <ul className='list-unstyled d-flex flex-column gap-2 gap-md-4'>
               <li><Link className='text-decoration-none text-light' to="/gallery">Facilities</Link></li>

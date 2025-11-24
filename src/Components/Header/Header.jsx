@@ -7,7 +7,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileCourseOpen, setMobileCourseOpen] = useState(false);
-  const [isLightNav, setIsLightNav] = useState(false); // Track scroll color mode
+  const [isLightNav, setIsLightNav] = useState(false);
 
   useEffect(() => {
     const header = document.querySelector(".header-container");
@@ -32,6 +32,7 @@ function Header() {
   const handleNavClick = () => {
     setMenuOpen(false);
     setMobileCourseOpen(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   return (
@@ -39,21 +40,19 @@ function Header() {
       <div className="header-container">
         <div className="header-contents">
 
-          {/* Logo */}
           <div className="header-logo">
             <Link to="/">
               <img
                 src={isLightNav ? "/ithislogoblue.png" : "/footerLogo.png"}
                 alt="Ithis Medicity Logo"
                 width="150"
-                style={{ transition: '0.3s ease all' }}
                 className="img-fluid"
+                style={{ transition: "0.3s ease all" }}
               />
             </Link>
           </div>
 
-          {/* Hamburger */}
-          <button className="hamburger" onClick={() => setMenuOpen((s) => !s)}>
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? (
               <FiX size={34} color={isLightNav ? "#000" : "#fff"} />
             ) : (
@@ -61,7 +60,6 @@ function Header() {
             )}
           </button>
 
-          {/* Nav Links (desktop) */}
           <div className="header-links">
             <ul className="link-lists">
               <li><Link to="/">Home</Link></li>
@@ -71,38 +69,37 @@ function Header() {
                 <Link to="#">Course</Link>
                 <div className="dropdown-menu">
                   <ul className="dropdown-column">
-                    <li><Link to="/bscnursing">BSC Nursing</Link></li>
-                    <li><Link to="/dpharm">D Pharm</Link></li>
+                    <li><Link to="/bscnursing" onClick={() => window.scrollTo(0, 0)}>BSC Nursing</Link></li>
+                    <li><Link to="/dpharm" onClick={() => window.scrollTo(0, 0)}>D Pharm</Link></li>
                   </ul>
                 </div>
               </li>
 
-              <li><Link to="/gallery">Facilities</Link></li>
+              <li><Link to="/facilities">Facilities</Link></li>
+              <li><Link to="/gallery">Gallery</Link></li>
               <li><Link to="/admission">Admission</Link></li>
               <li><Link to="/career">Career</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Apply Button */}
           <div className="apply-button">
-            <button className="btn">Apply Now</button>
+            <Link to="/admission" className="btn">Apply Now</Link>
           </div>
         </div>
       </div>
 
-      {/* Sidebar (mobile) */}
+      {/* SIDEBAR */}
       <div className={`sidebar-overlay ${menuOpen ? "visible" : ""}`} onClick={() => setMenuOpen(false)} />
-      <aside className={`sidebar-drawer ${menuOpen ? "open" : ""}`} role="navigation" aria-hidden={!menuOpen}>
+
+      <aside className={`sidebar-drawer ${menuOpen ? "open" : ""}`}>
         <div className="sidebar-top">
           <div className="sidebar-logo">
             <Link to="/" onClick={handleNavClick}>
-              <img src="/ithislogoblue.png" alt="Ithis Medicity" width="120" />
+              <img src="/ithislogoblue.png" width="120" alt="" />
             </Link>
           </div>
-          <button className="sidebar-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">
-            ×
-          </button>
+          <button className="sidebar-close" onClick={() => setMenuOpen(false)}>×</button>
         </div>
 
         <nav className="sidebar-nav">
@@ -113,8 +110,7 @@ function Header() {
             <li className="sidebar-course">
               <button
                 className="mobile-course-toggle"
-                onClick={() => setMobileCourseOpen((s) => !s)}
-                aria-expanded={mobileCourseOpen}
+                onClick={() => setMobileCourseOpen(!mobileCourseOpen)}
               >
                 Course
                 <span className={`chev ${mobileCourseOpen ? "open" : ""}`}></span>
@@ -126,13 +122,14 @@ function Header() {
               </ul>
             </li>
 
-            <li><Link to="/gallery" onClick={handleNavClick}>Facilities</Link></li>
+            <li><Link to="/facilities" onClick={handleNavClick}>Facilities</Link></li>
+            <li><Link to="/gallery" onClick={handleNavClick}>Gallery</Link></li>
             <li><Link to="/admission" onClick={handleNavClick}>Admission</Link></li>
             <li><Link to="/career" onClick={handleNavClick}>Career</Link></li>
             <li><Link to="/contact" onClick={handleNavClick}>Contact</Link></li>
 
             <li className="sidebar-apply">
-              <button className="btn" onClick={() => handleNavClick()}>Apply Now</button>
+              <Link className="btn" to="/admission" onClick={handleNavClick}>Apply Now</Link>
             </li>
           </ul>
         </nav>

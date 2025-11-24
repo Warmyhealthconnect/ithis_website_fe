@@ -55,7 +55,7 @@
 }
 
 .banner-text h1 {
-  font-size: 48px;
+  font-size: 50px;
   margin-bottom: 20px;
   font-weight: 700;
 }
@@ -63,6 +63,16 @@
 .banner-text p {
   font-size: 24px;
   line-height: 25px;
+}
+
+.banner-btn {
+  background-color: transparent;
+  color: white;
+  border-radius: 35px;
+  width: 10vw;
+  height: 3vw;
+  font-size: 1.2vw;
+  border: 2px solid white;
 }
 
 .broadcast-section {
@@ -100,7 +110,7 @@
   100% {
     transform: translateX(-100%);
   }
-  
+
 }
 
 /* -------------------------------
@@ -235,10 +245,11 @@
   background-color: var(--component);
   color: white;
   border-radius: 35px;
-  width: 14vw;
-  height: 4vw;
-  font-size: 1.5vw;
+  width: 10vw;
+  height: 3vw;
+  font-size: 1.2vw;
 }
+
 
 .know_more:hover {
   border: 1px solid black;
@@ -294,11 +305,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .course-section-txts {
-  width: 63%;
+  width: 100%;
 }
 
 .course-section-txts h1 {
@@ -364,30 +375,31 @@
 .why-choose-box-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 30px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 30px;
   width: 100%;
-  gap: 10px;
+  padding: 40px 0;
 }
+
 
 .why-choose-box {
-  background-color: var(--main-color);
-  width: 470px;
+  width: 450px;
   height: 300px;
-  border-radius: 10px;
-  color: white;
+  border-radius: 14px;
+  padding: 40px 25px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 30px;
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); */
+  align-items: flex-start;
+  text-align: left;
 }
 
+
 .why-choose-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  align-self: flex-start;
 }
+
 
 .why-choose-box h2 {
   font-size: 22px;
@@ -520,23 +532,23 @@
   }
 
   .know_more {
-  background-color: var(--component);
-  color: white;
-  border-radius: 35px;
-  width: 20vw;
-  height: 6vw;
-  font-size: 2vw;
-}
+    background-color: var(--component);
+    color: white;
+    border-radius: 35px;
+    width: 20vw;
+    height: 6vw;
+    font-size: 2vw;
+  }
 
-.home_3_center_div{
-      border: none !important;
-}
+  .home_3_center_div {
+    border: none !important;
+  }
 
-.know_more:hover {
-  border: 1px solid black;
-  background-color: white;
-  color: var(--component);
-}
+  .know_more:hover {
+    border: 1px solid black;
+    background-color: white;
+    color: var(--component);
+  }
 
   /* Courses Section */
   .course-section {

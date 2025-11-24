@@ -21,7 +21,7 @@ function Banner({ page }) {
             <i className="fa-solid fa-angle-right"></i>
           </span>
 
-          <span className='breadcrumb-text'>{formattedPage}</span>
+          <span className='breadcrumb-text'>Home</span>
         </div>
       </div>
     </div>

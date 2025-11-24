@@ -1,168 +1,94 @@
 /* -------------------------------------- */
-/* 1. Header Container (Positioning & Overlay) */
+/* HEADER MAIN CONTAINER */
 /* -------------------------------------- */
 .header-container {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; 
-    background-color: transparent; 
-    padding: 25px 0;
-    
-    display: flex;
-    justify-content: center;
-}
-
-/* -------------------------------------- */
-/* 2. Inner Contents (Alignment - CRITICAL) */
-/* -------------------------------------- */
-.header-contents {
-    width: 90%; 
-    max-width: 1300px;
-    padding: 1px;
-    display: flex;
-    
-    /* Use space-between to push links and button apart */
-    justify-content: space-between; 
-    align-items: center; 
-    
-    /* Pushes the entire centered block to the right */
-    margin-right: -100px; 
-}
-
-.header-logo{
-  margin-left: -100px;
-}
-
-/* -------------------------------------- */
-/* 3. Link Group Positioning (CRITICAL) */
-/* -------------------------------------- */
-.header-links {
-    /* Auto margins for initial centering */
-    margin-right: auto;
-    margin-left: auto;
-    
-    display: flex;
-    align-items: center;
-    
-    /* 💥 Reduced space to pull the button closer to the links */
-    padding-right: 20px; 
-}
-
-/* -------------------------------------- */
-/* 4. Link List (Horizontal Menu) */
-/* -------------------------------------- */
-.link-lists {
-    display: flex; 
-    list-style: none;
-    padding: 0;
-    margin: 0; 
-    /* Maintaining 50px gap */
-    gap: 50px; 
-}
-
-.link-lists li a {
-    text-decoration: none;
-    color: #fff; 
-    font-weight: 500;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-/* -------------------------------------- */
-/* 5. Button Styling */
-/* -------------------------------------- */
-.apply-button .btn {
-    padding: 12px 30px;
-    background-color: #fff;
-    color: #111;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 170px;
-}
-
-/* --- Dropdown Container --- */
-.dropdown {
-  position: relative;
-}
-
-/* --- Dropdown Menu (hidden by default) --- */
-.dropdown-menu {
-  position: absolute;
-  top: 100%; /* below the parent */
+  position: fixed;
+  top: 0;
   left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  padding: 25px 0;
   display: flex;
-  gap: 40px; /* space between the two lists */
-  background-color: white;
-  padding: 20px 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.25s ease;
-  z-index: 999;
-  min-width: 200px;
-}
-
-/* --- Show Dropdown on Hover --- */
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* --- Each Column --- */
-.dropdown-column {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* --- Dropdown Links --- */
-.dropdown-column li a {
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 400;
-  transition: color 0.2s;
-}
-
-.dropdown-column li a:hover {
-  color: #c9e0ff;
-}
-
-/* --- Optional: underline indicator for active item --- */
-.link-lists li a:hover,
-.dropdown:hover > a {
-  color: #c9e0ff;
-}
-
-/* -------------------------------------- */
-/* 6. Scroll-based Color Adaptation       */
-/* -------------------------------------- */
-
-.header-container {
+  justify-content: center;
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Default - white text for dark backgrounds */
-.header-container a {
-  color: #fff;
-  transition: color 0.4s ease;
+.header-container.light-nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* When scrolling to light section */
+/* -------------------------------------- */
+/* HEADER CONTENT ALIGNMENT */
+/* -------------------------------------- */
+.header-contents {
+  width: 90%;
+  max-width: 1300px;
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* -------------------------------------- */
+/* LOGO */
+/* -------------------------------------- */
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* -------------------------------------- */
+/* DESKTOP NAVIGATION */
+/* -------------------------------------- */
+.header-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-lists {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 50px;
+}
+
+.link-lists li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+/* Light nav scroll color */
 .header-container.light-nav a {
   color: #000;
+}
+
+.link-lists li a:hover {
+  color: #c9e0ff;
+}
+
+/* -------------------------------------- */
+/* APPLY BUTTON */
+/* -------------------------------------- */
+.apply-button .btn {
+  padding: 12px 30px;
+  background-color: #fff;
+  color: #111;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 170px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .header-container.light-nav .btn {
@@ -170,91 +96,101 @@
   color: #fff;
 }
 
-.header-container .btn {
-  transition: background 0.4s ease, color 0.4s ease;
+/* -------------------------------------- */
+/* DROPDOWN */
+/* -------------------------------------- */
+.dropdown {
+  position: relative;
 }
 
-/* Optional: add subtle background for visibility */
-.header-container.light-nav {
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  gap: 40px;
+  background: #fff;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  min-width: 200px;
+  transition: all 0.25s ease;
+  z-index: 999;
 }
 
-.header-container:not(.light-nav) {
-  background-color: rgba(0, 0, 0, 0.1);
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-/* --------------------------
-   Hamburger & Sidebar (mobile)
-   -------------------------- */
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
 
-/* Basic hamburger (hidden on desktop) */
+.dropdown-column li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dropdown-column li a:hover {
+  color: #c9e0ff;
+}
+
+/* -------------------------------------- */
+/* MOBILE HAMBURGER */
+/* -------------------------------------- */
 .hamburger {
   display: none;
   background: transparent;
   border: 0;
-  cursor: pointer;
   padding: 8px;
-  margin-left: 12px;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
 }
 
-/* three bars */
-.hamburger .hamburger-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  margin: 4px 0;
-  background: #fff; /* default color; desktop JS changes color via header-container.light-nav */
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-/* Active state: small animation */
-.hamburger.is-active .hamburger-bar:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-.hamburger.is-active .hamburger-bar:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.is-active .hamburger-bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* Sidebar overlay */
+/* -------------------------------------- */
+/* MOBILE SIDEBAR */
+/* -------------------------------------- */
 .sidebar-overlay {
   display: none;
 }
 
-/* Sidebar drawer */
 .sidebar-drawer {
   display: none;
 }
 
-/* Mobile rules */
+/* -------------------------------------- */
+/* RESPONSIVE: MOBILE (max 900px) */
+/* -------------------------------------- */
 @media (max-width: 900px) {
-  .header-logo{
-    margin-left: -40px;
-    width: 20vw;
+
+  /* Logo shrink */
+  .header-logo img {
+    width: 120px;
   }
-  /* show hamburger */
+
+  /* Show hamburger */
   .hamburger {
     display: flex;
     z-index: 1002;
-    margin-right: 30px;
+    margin-right: 20px;
   }
 
-  /* hide original desktop apply button */
+  /* Hide desktop nav & button */
+  .header-links,
   .apply-button {
     display: none;
   }
 
-  /* hide the desktop nav links (desktop layout) - but keep markup */
-  .header-links {
-    display: none;
-  }
-
-  /* Sidebar overlay (dim background) */
+  /* Overlay */
   .sidebar-overlay {
     position: fixed;
     inset: 0;
@@ -275,121 +211,102 @@
     display: block;
     position: fixed;
     top: 0;
-    right: -320px; /* hidden by default */
-    width: 320px;
+    right: -320px;
     max-width: 85%;
+    width: 320px;
     height: 100vh;
-    background: var(--component, #05293a); /* try to follow your theme; fallback color provided */
+    background: var(--component, #05293a);
     color: #fff;
     z-index: 1001;
-    box-shadow: 2px 0 14px rgba(0,0,0,0.35);
     transition: right 0.28s cubic-bezier(.2,.9,.2,1);
     padding: 18px;
-    display: flex;
-    flex-direction: column;
+    box-shadow: 2px 0 14px rgba(0,0,0,0.35);
   }
-
   .sidebar-drawer.open {
     right: 0;
   }
 
-  /* Top row inside drawer */
   .sidebar-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 14px;
   }
-  .sidebar-top .sidebar-logo a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 20px;
-  }
+
   .sidebar-close {
     background: transparent;
     border: 0;
-    color: #fff;
     font-size: 28px;
-    line-height: 1;
+    color: #fff;
     cursor: pointer;
   }
 
-  /* Drawer nav list */
   .sidebar-nav {
-    flex: 1;
     overflow-y: auto;
-    padding-top: 8px;
+    margin-top: 10px;
   }
+
   .sidebar-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 12px;
-  }
-  .sidebar-list a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 4px;
-    display: inline-block;
+    padding: 0;
   }
 
-  /* Course collapsible */
+  .sidebar-list a {
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 4px;
+  }
+
+  /* Mobile course dropdown */
   .mobile-course-toggle {
     width: 100%;
-    text-align: left;
     background: transparent;
     border: 0;
     color: #fff;
     font-size: 16px;
-    padding: 10px 4px;
-    cursor: pointer;
+    padding: 8px 4px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    cursor: pointer;
   }
+
   .sidebar-sublist {
     list-style: none;
     padding-left: 12px;
-    margin: 4px 0 0 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.22s ease;
   }
+
   .sidebar-sublist.open {
-    max-height: 200px; /* plenty for two items */
+    max-height: 200px;
   }
+
   .sidebar-sublist li a {
+    padding: 6px 0;
     font-size: 15px;
-    color: #eaf6ff;
-    padding: 8px 0;
-    display: block;
   }
+
   .chev {
     border: solid #fff;
     border-width: 0 2px 2px 0;
-    display: inline-block;
     padding: 6px;
     transform: rotate(45deg);
     transition: transform 0.2s ease;
-    margin-left: 8px;
   }
   .chev.open {
     transform: rotate(-135deg);
   }
 
-  .sidebar-apply {
-    padding-top: 12px;
-  }
   .sidebar-apply .btn {
     width: 100%;
-    border-radius: 8px;
-    background-color: white;
     font-weight: 700;
+    border-radius: 10px;
+    background: #fff;
+    color: #000;
   }
 }
