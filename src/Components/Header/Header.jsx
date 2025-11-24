@@ -44,7 +44,7 @@ function Header() {
             <Link to="/">
               <img
                 src={isLightNav ? "/ithislogoblue.png" : "/footerLogo.png"}
-                alt="Ithis Medicity Logo"
+                alt="Ithis Medcity"
                 width="150"
                 className="img-fluid"
                 style={{ transition: "0.3s ease all" }}
@@ -96,7 +96,7 @@ function Header() {
         <div className="sidebar-top">
           <div className="sidebar-logo">
             <Link to="/" onClick={handleNavClick}>
-              <img src="/ithislogoblue.png" width="120" alt="" />
+              <img src="/ithislogoblue.png" width="120" alt="Ithis Medcity" />
             </Link>
           </div>
           <button className="sidebar-close" onClick={() => setMenuOpen(false)}>×</button>
