@@ -154,7 +154,7 @@
   transform: translate(-50%, -50%);
   width: 250px;
   height: 250px;
-  background: url('/logo_bg.png') no-repeat center center;
+  background: url('/index/ithislogo.png') no-repeat center center;
   background-size: contain;
   opacity: 0.03;
   z-index: -1;
