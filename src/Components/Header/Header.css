@@ -83,6 +83,7 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  margin-left: 20px;
   width: 170px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.4s ease, color 0.4s ease;
@@ -186,10 +187,14 @@
   right: 0;
 }
 
+.sidebar-links{
+  text-decoration: none;
+}
+
 /* -------------------------------------- */
 /* RESPONSIVE (below 900px) */
 /* -------------------------------------- */
-@media (max-width: 900px) {
+@media (max-width: 1123px) {
 
   .header-logo img {
     width: 120px;

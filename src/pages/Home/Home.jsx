@@ -125,21 +125,26 @@ function Home() {
               </div>
             </section>
             <section className='home_section_2'>
-              <div className="row align-items-center px-3 py-4">
+              <div className="d-flex justify-content-evenly row align-items-center px-3 py-4">
 
                 {/* IMAGE FIRST ON MOBILE */}
-                <div className="col-12 col-md-5 mb-4 mb-md-0">
-                  <img src="/Homeimages/home_section_2_img.png" className='img-fluid w-100' alt="" />
+                <div className="col-12 col-md-5 mb-4 mb-md-0" style={{height:'560px'}}>
+                  <img src="/Homeimages/home_section_2_img.png" height={'100%'} className=' w-100' alt="" />
                 </div>
 
                 {/* TEXT */}
                 <div className="col-12 col-md-6 d-flex flex-column">
-                  <h2 className='medcity-about'>
-                    Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
-                  </h2>
+                  <div className='home-section-desc'>
+                    <h2 className='medcity-about'>
+                      Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
+                    </h2>
+                    <p className='medcity-about-p'>
+                     Today, Ithis Hospital offers dependable and patient-focused medical services with strong expertise in pregnancy care, delivery, women's health, and general treatment, while Ithis Medicity Nursing College offers high-quality nursing education with modern facilities, expert faculty, and real clinical training, preparing students to become confident and caring professionals. Together, we stand as a leading healthcare and nursing education institution in Malappuram, committed to delivering quality care, empowering future nurses, and upholding a legacy based on love, service, and community trust.
+                    </p>
+                  </div>
 
                   <div className="mt-4">
-                    <Link to="/about">
+                    <Link to="/about" style={{all:'unset'}}>
                       <button className="know_more">
                         Know More
                       </button>
@@ -157,7 +162,7 @@ function Home() {
                   of health and healing. Nursing is not just a career; it is a calling of compassion and courage, where knowledge meets kindness and care becomes a sacred duty.
                   At IET, we inspire our students to grow into skilled, confident, and value-oriented professionals who can serve humanity with dedication and dignity</p>
                 <div className='ithis-logo'>
-                  <img src="/footerLogo.png" className='img-fluid' alt="" />
+                  <img src="/footerLogo.png" className='' alt="" />
                 </div>
               </div>
               <div className="principal-img-section">
@@ -239,27 +244,27 @@ function Home() {
                 <h1>Why Choose Ithis</h1>
               </div>
 
-<div className="why-choose-box-container">
-  {
-    whychoose.map((item, index) => (
-      <div 
-        key={index}
-        className="why-choose-box"
-        style={{ backgroundColor: item.background, color: item.color }}
-      >
-        <div className="why-choose-icon">
-          <img src={item.logo} alt="" />
-        </div>
+              <div className="why-choose-box-container">
+                {
+                  whychoose.map((item, index) => (
+                    <div
+                      key={index}
+                      className="why-choose-box"
+                      style={{ backgroundColor: item.background, color: item.color }}
+                    >
+                      <div className="why-choose-icon">
+                        <img src={item.logo} alt="" />
+                      </div>
 
-        <h2>{item.name}</h2>
+                      <h2>{item.name}</h2>
 
-        <p style={{ color: item.color, fontSize: '15px' }}>
-          {item.para}
-        </p>
-      </div>
-    ))
-  }
-</div>
+                      <p style={{ color: item.color, fontSize: '15px' }}>
+                        {item.para}
+                      </p>
+                    </div>
+                  ))
+                }
+              </div>
 
             </section>
 

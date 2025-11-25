@@ -104,8 +104,8 @@ function Header() {
 
         <nav className="sidebar-nav">
           <ul className="sidebar-list">
-            <li><Link to="/" onClick={handleNavClick}>Home</Link></li>
-            <li><Link to="/about" onClick={handleNavClick}>About</Link></li>
+            <li><Link className="sidebar-links" to="/" onClick={handleNavClick}>Home</Link></li>
+            <li><Link className="sidebar-links" to="/about" onClick={handleNavClick}>About</Link></li>
 
             <li className="sidebar-course">
               <button
@@ -117,19 +117,19 @@ function Header() {
               </button>
 
               <ul className={`sidebar-sublist ${mobileCourseOpen ? "open" : ""}`}>
-                <li><Link to="/bscnursing" onClick={handleNavClick}>BSC Nursing</Link></li>
-                <li><Link to="/dpharm" onClick={handleNavClick}>D Pharm</Link></li>
+                <li><Link className="sidebar-links" to="/bscnursing" onClick={handleNavClick}>BSC Nursing</Link></li>
+                <li><Link className="sidebar-links" to="/dpharm" onClick={handleNavClick}>D Pharm</Link></li>
               </ul>
             </li>
 
-            <li><Link to="/facilities" onClick={handleNavClick}>Facilities</Link></li>
-            <li><Link to="/gallery" onClick={handleNavClick}>Gallery</Link></li>
-            <li><Link to="/admission" onClick={handleNavClick}>Admission</Link></li>
-            <li><Link to="/career" onClick={handleNavClick}>Career</Link></li>
-            <li><Link to="/contact" onClick={handleNavClick}>Contact</Link></li>
+            <li><Link className="sidebar-links" to="/facilities" onClick={handleNavClick}>Facilities</Link></li>
+            <li><Link className="sidebar-links" to="/gallery" onClick={handleNavClick}>Gallery</Link></li>
+            <li><Link className="sidebar-links" to="/admission" onClick={handleNavClick}>Admission</Link></li>
+            <li><Link className="sidebar-links" to="/career" onClick={handleNavClick}>Career</Link></li>
+            <li><Link className="sidebar-links" to="/contact" onClick={handleNavClick}>Contact</Link></li>
 
             <li className="sidebar-apply">
-              <Link className="btn" to="/admission" onClick={handleNavClick}>Apply Now</Link>
+              <Link  className="btn" to="/admission" onClick={handleNavClick}>Apply Now</Link>
             </li>
           </ul>
         </nav>
