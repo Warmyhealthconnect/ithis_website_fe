@@ -6,11 +6,43 @@ import AdminLoginModal from '../../Admin/Components/AdminLoginModal/AdminLoginMo
 
 function Footer() {
   const [showModal, setShowModal] = useState(false);
- 
+
   return (
     <>
       <div className='footer_container'>
         <h2>Empowering a brighter,healthier <br /> future with Ithis Medicity <br /><hr /></h2>
+        <div>
+          <h5>An initiative of ithi educational trust</h5>
+          <h6>We are a part of a wider group of healthcare and educational institutions</h6>
+        </div>
+
+        <h5 className='mt-4'>Our networks</h5>
+        <div className="footer-links row py-5">
+          <div className="col">
+            <a href="https://ietcop.com/"><div className='circular-img'>
+              <img src="/Homeimages/ietcop-2048x896.png" alt="Logo" />
+            </div>
+            </a>
+            <h5 className='py-3'>iet College of Pharmacy</h5>
+          </div>
+          <div className="col">
+            <a href="https://www.ithismedcity.com/">
+              <div className='circular-img'>
+                <img src="/Homeimages/iet-institute-of-allied-health-science-logo.png" alt="Logo" />
+              </div>
+            </a>
+            <h5 className='py-3'>ithis medicity</h5>
+          </div>
+          <div className="col">
+            <a href="https://ithishospital.com/">
+              <div className='circular-img'>
+                <img src="/Homeimages/ithis_hospital.png" alt="Logo" />
+              </div>
+            </a>
+            <h5 className='py-3'>ithis hospital</h5>
+          </div>
+        </div>
+
         <div className='row'>
           <div className="col footer_container_1 ">
             <div className='logo_container mb-5'>
