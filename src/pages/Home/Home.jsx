@@ -124,17 +124,21 @@ function Home() {
                 <h1>Ithis Medicity: Creating Healthcare Heroes of <br /> the Future with Hope and Heart.</h1>
               </div>
             </section>
-            <section className='home_section_2 '>
-              <div className="row justify-content-between px-3 py-4">
-                <div className="col-5">
-                  <img src="/Homeimages/home_section_2_img.png" className='img-fluid' alt="" />
+            <section className='home_section_2'>
+              <div className="row align-items-center px-3 py-4">
+
+                {/* IMAGE FIRST ON MOBILE */}
+                <div className="col-12 col-md-5 mb-4 mb-md-0">
+                  <img src="/Homeimages/home_section_2_img.png" className='img-fluid w-100' alt="" />
                 </div>
-                <div className="col-6 d-flex flex-column justify-content-around">
-                  <h2 className='medcity-about' style={{ textAlign: "start" }}>Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
 
-
+                {/* TEXT */}
+                <div className="col-12 col-md-6 d-flex flex-column">
+                  <h2 className='medcity-about'>
+                    Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
                   </h2>
-                  <div className="d-flex justify-content-start mt-5">
+
+                  <div className="mt-4">
                     <Link to="/about">
                       <button className="know_more">
                         Know More
@@ -142,8 +146,10 @@ function Home() {
                     </Link>
                   </div>
                 </div>
+
               </div>
             </section>
+
 
             <section className='principal-section'>
               <div className="principal-text-section">
@@ -233,25 +239,28 @@ function Home() {
                 <h1>Why Choose Ithis</h1>
               </div>
 
-              <div className="why-choose-box-container">
-                {
-                  whychoose.map(item => (
-                    <div className="why-choose-box"
-                      style={{ backgroundColor: item.background, color: item.color }}
-                    >
-                      <div className="why-choose-icon">
-                        <img src={item.logo} width={'12%'} alt="" />
-                      </div>
+<div className="why-choose-box-container">
+  {
+    whychoose.map((item, index) => (
+      <div 
+        key={index}
+        className="why-choose-box"
+        style={{ backgroundColor: item.background, color: item.color }}
+      >
+        <div className="why-choose-icon">
+          <img src={item.logo} alt="" />
+        </div>
 
-                      <h2>{item.name}</h2>
+        <h2>{item.name}</h2>
 
-                      <p style={{ color: item.color, fontSize: '15px' }}>
-                        {item.para}
-                      </p>
-                    </div>
-                  ))
-                }
-              </div>
+        <p style={{ color: item.color, fontSize: '15px' }}>
+          {item.para}
+        </p>
+      </div>
+    ))
+  }
+</div>
+
             </section>
 
           </div>

@@ -1,18 +1,108 @@
-.contact_section1{
+/* Section spacing */
+.contact_section1 {
     margin: 8% 0%;
+    padding: 0 20px;
 }
 
-.contact_section2{
-    margin: 8% 0%;
+.contact_section2 {
+    margin: 6% 0%;
 }
 
-.icon_bg,.submit_btn{
+/* Icon + submit button color */
+.icon_bg,
+.submit_btn {
     background-color: #112237;
     color: white;
 }
 
-.submit_btn:hover{
-    background-color:white ;
+/* Submit button hover */
+.submit_btn:hover {
+    background-color: white;
     border: 2px solid #112237;
     color: #112237;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+    .contact_section1 h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .contact_section2 .row {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact_section2 .col {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact_section1 h1 {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .contact_section2 {
+        padding: 0 20px;
+    }
+
+    /* Form responsive layout */
+    form {
+        width: 100% !important;
+    }
+
+    .form-control-lg {
+        font-size: 16px;
+        padding: 10px 14px;
+    }
+
+    .submit_btn {
+        padding: 10px 20px !important;
+    }
+
+    .icon_bg {
+        padding: 10px !important;
+    }
+
+    /* Contact info spacing */
+    .contact_section2 p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .contact_section1 h1 {
+        font-size: 20px;
+    }
+
+    .contact_section2 h3 {
+        font-size: 20px;
+    }
+
+    .contact_section2 h5 {
+        font-size: 14px;
+    }
+
+    .contact_section2 p {
+        font-size: 14px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    .submit_btn {
+        font-size: 16px;
+        padding: 10px;
+    }
 }
