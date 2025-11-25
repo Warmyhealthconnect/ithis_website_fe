@@ -1,256 +1,548 @@
-  /* -------------------------------
-    PARALLAX CONTAINER
-  --------------------------------*/
-  .parallax-container {
-    font-family: Arial, sans-serif;
+/* -------------------------------
+   PARALLAX CONTAINER
+--------------------------------*/
+.parallax-container {
+  font-family: Arial, sans-serif;
+}
+
+/* -------------------------------
+   PARALLAX BANNER
+--------------------------------*/
+.parallax-banner {
+  position: relative;
+  height: 600px;
+  /* height of banner */
+  overflow: hidden;
+  padding: 3%;
+}
+
+/* Parallax Video stays fixed, no interference */
+.parallax-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  /* ✅ allows clicks/scroll to pass through */
+}
+
+/* Dark overlay to make video darker */
+.parallax-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* adjust alpha for darkness */
+  z-index: 0;
+  /* above video but below text */
+}
+
+/* Banner text on top */
+.banner-text {
+  position: fixed;
+  z-index: 1;
+  color: white;
+  padding-left: 2%;
+  text-align: left;
+  margin-top: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease-out;
+  /* smooth fade effect */
+}
+
+.banner-text h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.banner-text p {
+  font-size: 24px;
+  line-height: 25px;
+}
+
+.banner-btn {
+  background-color: transparent;
+  color: white;
+  border-radius: 35px;
+  width: 10vw;
+  height: 3vw;
+  font-size: 1.2vw;
+  border: 2px solid white;
+}
+
+.broadcast-section {
+  background-color: var(--main-color);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  /* REMOVE: justify-content: center; - This can interfere with the left-to-right flow */
+}
+
+.broadcast-text {
+  color: white;
+  display: inline-block;
+  padding-left: 100%;
+  /* REMOVE: padding-left: 100%; - This is the primary cause of the initial massive gap */
+
+  /* Animation remains the same speed/duration */
+  animation: scroll-loop 15s linear infinite;
+  margin: 0;
+}
+
+@keyframes scroll-loop {
+
+  /* Start the element at its natural position (no offset) */
+  0% {
+    transform: translateX(0);
   }
 
-  /* -------------------------------
-    PARALLAX BANNER
-  --------------------------------*/
+  /* Move the element exactly 50% of its width. 
+       Since the text is duplicated, this pulls the first copy off-screen 
+       and perfectly aligns the second copy at the start of the container. 
+       The animation then resets to 0% instantly, creating the seamless loop. */
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+
+/* -------------------------------
+   SCROLLABLE CONTENT
+--------------------------------*/
+
+.scrollable_section {
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
+  background-color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content-section p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+/* Container with fixed logo */
+.logo-background {
+  position: relative;
+  /* required for pseudo-element */
+}
+
+
+/* Fixed logo */
+.logo-background::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  background: url('/index/ithislogo.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.03;
+  z-index: -1;
+  pointer-events: none;
+  /* ✅ allows scroll to pass through */
+}
+
+.home_section_1 h6 {
+  color: #0A1E3599;
+}
+
+.principal-section {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.principal-text-section {
+  background-color: var(--main-color);
+  height: 560px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* gap: 90px; */
+  padding: 7% 7% 0% 7%;
+}
+
+.ithis-logo {
+
+  width: 8vw;
+  /* background-color: aqua; */
+}
+
+
+.principal-img-section {
+  background-color: var(--component);
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* horizontal */
+  align-items: center;
+  /* vertical */
+}
+
+.principal-img-container {
+  width: 70%;
+  height: 350px;
+  border-radius: 20px;
+  background-image: url('/homepage/principal.jpg');
+  background-size: cover;
+  background-position: center top 80%;
+  border: 10px solid var(--main-color);
+
+}
+
+.principal-txt-grp {
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  line-height: 10px;
+}
+
+.principal-txt-grp h1 {
+  font-size: 30px;
+}
+
+
+
+/* section2 */
+
+.home_section_2 {
+  padding: 2%;
+}
+
+.home_section_2 h4 {
+  text-align: justify;
+}
+
+.know_more {
+  background-color: var(--component);
+  color: white;
+  border-radius: 35px;
+  width: 10vw;
+  height: 3vw;
+  font-size: 1.2vw;
+}
+
+
+.know_more:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: var(--component);
+}
+
+
+/* section 3 */
+.home_section_3 {
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.home_sec_3_container {
+  min-height: 100px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.home_sec_3_container img {
+  width: 16%;
+}
+
+.home_3_center_div {
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
+}
+
+.home_section_4 {
+  margin-bottom: 5%;
+}
+
+.circular-img {
+  width: 150px;
+  /* adjust size as needed */
+  height: 150px;
+  /* same as width for perfect circle */
+  object-fit: contain;
+  /* ensures image fills circle */
+  border: 4px solid #183559F5;
+  /* border thickness and color */
+  border-radius: 50%;
+  /* makes it circular */
+  padding: 5px;
+  /* optional: space between image and border */
+}
+
+
+.course-section {
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+.course-section-txts {
+  width: 100%;
+}
+
+.course-section-txts h1 {
+  font-size: 40px;
+}
+
+.course-section-txts p {
+  font-size: 25px;
+}
+
+.course-cards-container {
+  margin-top: 80px;
+  display: flex;
+  gap: 120px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.course-card {
+  border: 1px solid gray;
+  height: 500px;
+  width: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card-overlay {
+  background-color: var(--component);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 20%;
+}
+
+.course-card-img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.why-choose-us-section {
+  margin-bottom: 5%;
+  padding: 3%;
+}
+
+.why-choose-text {
+  align-self: flex-start;
+  justify-self: start;
+  text-align: left;
+}
+
+/* Why Choose Us Section */
+.why-choose-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 30px;
+  width: 100%;
+  padding: 40px 0;
+}
+
+
+.why-choose-box {
+  width: 450px;
+  height: 300px;
+  border-radius: 14px;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+
+.why-choose-icon {
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+
+.why-choose-box h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+
+
+/* ---------------------------------
+   MOBILE VIEW (Average Mobile Size)
+----------------------------------- */
+@media (max-width: 600px) {
+
+
   .parallax-banner {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    /* responsive height */
-    overflow: hidden;
+    height: 95vh;
   }
 
-  /* Video inside banner */
+  .logo-background::before,
   .parallax-video {
-    position: absolute;
-    top: 0;
+    height: 95vh;
+    pointer-events: none !important;
+  }
+
+  /* Parallax Banner */
+  .banner-text {
+    position: fixed;
+    top: 75%;
     left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  /* Dark overlay for readability */
-  .parallax-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0;
-  }
-
-  /* Banner text */
-  .banner-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    color: white;
-    text-align: center;
-    width: 90%;
-    padding: 0 10px;
-    transition: opacity 0.2s ease-out;
+    padding: 0 6%;
+    text-align: left;
   }
 
   .banner-text h1 {
-    font-size: 5vw;
-    /* responsive */
+    font-size: 20px;
     font-weight: 700;
-    margin-bottom: 20px;
+    line-height: 1.4;
+    margin-bottom: 10px;
   }
 
   .banner-text p {
-    font-size: 2.5vw;
-    line-height: 1.2;
-    margin-bottom: 15px;
+    font-size: 9px;
   }
 
-
-  .banner-btn {
-    background-color: transparent;
-    color: white;
-    border-radius: 35px;
-    padding: 10px 25px;
-    font-size: 1rem;
-    border: 2px solid white;
-    cursor: pointer;
-  }
-
-
+  /* Broadcast Section */
   .broadcast-section {
-    background-color: var(--main-color);
-    height: 80px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    white-space: nowrap;
-    /* REMOVE: justify-content: center; - This can interfere with the left-to-right flow */
+    height: 5vh;
   }
+
 
   .broadcast-text {
-    color: white;
-    display: inline-block;
-    padding-left: 100%;
-    /* REMOVE: padding-left: 100%; - This is the primary cause of the initial massive gap */
-
-    /* Animation remains the same speed/duration */
-    animation: scroll-loop 15s linear infinite;
-    margin: 0;
+    font-size: 10px;
+    animation-duration: 20s;
   }
-
-  @keyframes scroll-loop {
-
-    /* Start the element at its natural position (no offset) */
-    0% {
-      transform: translateX(0);
-    }
-
-    /* Move the element exactly 50% of its width. 
-        Since the text is duplicated, this pulls the first copy off-screen 
-        and perfectly aligns the second copy at the start of the container. 
-        The animation then resets to 0% instantly, creating the seamless loop. */
-    100% {
-      transform: translateX(-100%);
-    }
-
-  }
-
-  /* -------------------------------
-    SCROLLABLE CONTENT
-  --------------------------------*/
 
   .scrollable_section {
-    position: relative;
-    z-index: 1;
-    min-height: 500px;
-    background-color: #fff;
-    padding: 100px 20px;
-    text-align: center;
-  }
-
-  .content-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-
-  .content-section p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-
-  /* Container with fixed logo */
-  .logo-background {
-    position: relative;
-    /* required for pseudo-element */
-  }
-
-
-  /* Fixed logo */
-  .logo-background::before {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
-    background: url('/index/ithislogo.png') no-repeat center center;
-    background-size: contain;
-    opacity: 0.03;
-    z-index: -1;
-    pointer-events: none;
-    /* ✅ allows scroll to pass through */
+    padding-top: 15%;
   }
 
   .home_section_1 h6 {
-    color: #0A1E3599;
+    font-size: 12px;
+    font-weight: 600;
   }
 
-  .principal-section {
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: 60% 40%;
+  .home_section_1 h1 {
+    font-size: 14px;
   }
 
-  .principal-text-section {
-    background-color: var(--main-color);
-    height: 560px;
+  /* Section 2 (About Ithis) */
+  .home_section_2 .row {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: white;
-    font-size: 25px;
+    padding: 0;
+  }
+
+  .home_section_2 .col-5,
+  .home_section_2 .col-6 {
+    width: 100%;
+  }
+
+  .home_section_2 img {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .home_section_2 h4 {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+
+
+  /* Principal Section */
+  .principal-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    /* gap: 90px; */
-    padding: 7% 7% 0% 7%;
+    margin-top: 20px;
   }
 
-  .ithis-logo {
-
-    width: 8vw;
-    /* background-color: aqua; */
-  }
-
-
+  .principal-text-section,
   .principal-img-section {
-    background-color: var(--component);
-    height: 560px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* horizontal */
-    align-items: center;
-    /* vertical */
+    height: auto;
+    padding: 15px 15px;
+  }
+
+  .principal-text-section p {
+    font-size: 9px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    text-align: justify;
   }
 
   .principal-img-container {
     width: 70%;
-    height: 350px;
-    border-radius: 20px;
-    background-image: url('/homepage/principal.jpg');
-    background-size: cover;
-    background-position: center top 80%;
-    border: 10px solid var(--main-color);
-
-  }
-
-  .principal-txt-grp {
-    z-index: 1;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    line-height: 10px;
+    height: 150px;
+    border: 3px solid var(--main-color);
   }
 
   .principal-txt-grp h1 {
-    font-size: 30px;
+    font-size: 12px;
   }
 
-
-
-  /* section2 */
-
-  .home_section_2 {
-    padding: 2%;
-  }
-
-  .home_section_2 h4 {
-    text-align: justify;
+  .principal-txt-grp p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 9px;
   }
 
   .know_more {
     background-color: var(--component);
     color: white;
     border-radius: 35px;
-    width: 10vw;
-    height: 3vw;
-    font-size: 1.2vw;
+    width: 20vw;
+    height: 6vw;
+    font-size: 2vw;
   }
 
+  .home_3_center_div {
+    border: none !important;
+  }
 
   .know_more:hover {
     border: 1px solid black;
@@ -258,55 +550,9 @@
     color: var(--component);
   }
 
-
-  /* section 3 */
-  .home_section_3 {
-    margin-top: 5%;
-    margin-bottom: 10%;
-  }
-
-  .home_sec_3_container {
-    min-height: 100px;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-  }
-
-  .home_sec_3_container img {
-    width: 16%;
-  }
-
-  .home_3_center_div {
-    border-right: 1px solid grey;
-    border-left: 1px solid grey;
-  }
-
-  .home_section_4 {
-    margin-bottom: 5%;
-  }
-
-  .circular-img {
-    width: 150px;
-    /* adjust size as needed */
-    height: 150px;
-    /* same as width for perfect circle */
-    object-fit: contain;
-    /* ensures image fills circle */
-    border: 4px solid #183559F5;
-    /* border thickness and color */
-    border-radius: 50%;
-    /* makes it circular */
-    padding: 5px;
-    /* optional: space between image and border */
-  }
-
-
+  /* Courses Section */
   .course-section {
-    padding: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* text-align: center; */
+    padding: 40px 15px;
   }
 
   .course-section-txts {
@@ -314,408 +560,124 @@
   }
 
   .course-section-txts h1 {
-    font-size: 40px;
+    font-size: 22px;
   }
 
   .course-section-txts p {
-    font-size: 25px;
+    font-size: 14px;
   }
 
   .course-cards-container {
-    margin-top: 80px;
-    display: flex;
-    gap: 120px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
+
   .course-card {
-    border: 1px solid gray;
-    height: 500px;
-    width: 500px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px;
+    width: 90%;
+    height: auto;
+    /* allows height to adjust automatically */
+    border: none !important;
   }
 
   .card-overlay {
-    background-color: var(--component);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 20%;
+    height: 60px;
+    font-size: 18px;
   }
 
   .course-card-img {
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: auto;
+    height: 250px;
+    /* adjust height for mobile cards */
   }
 
-  .why-choose-us-section {
-    margin-bottom: 5%;
-    padding: 3%;
+  /* Facilities Section */
+  .home_sec_3_container {
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    padding: 20px 0;
   }
 
-  .why-choose-text {
-    align-self: flex-start;
-    justify-self: start;
-    text-align: left;
+  .home_sec_3_container img {
+    width: 30%;
+    margin-bottom: 10px;
+  }
+
+  .home_sec_3_container h3 {
+    font-size: 18px;
+  }
+
+  .home_sec_3_container h5 {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* Circular Logos Section */
+  .home_section_4 .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circular-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .home_section_4 h5 {
+    font-size: 14px;
   }
 
   /* Why Choose Us Section */
+  .why-choose-us-section {
+    position: relative;
+    z-index: 10;
+    /* anything above 0 */
+    padding: 20px 10px;
+  }
+
   .why-choose-box-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    gap: 30px;
-    width: 100%;
-    padding: 40px 0;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+
+    /* ✅ Remove centering */
+    justify-content: flex-start;
+    /* left-align items so overflow works */
   }
 
 
   .why-choose-box {
-    width: 450px;
-    height: 300px;
-    border-radius: 14px;
-    padding: 40px 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex: 0 0 80%;
+    scroll-snap-align: center;
     text-align: left;
   }
 
-
-  .why-choose-icon {
-    margin-bottom: 20px;
-    align-self: flex-start;
+  .why-choose-icon img {
+    width: 35px;
   }
-
 
   .why-choose-box h2 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 15px;
   }
 
-
-  @media (max-width: 768px) {
-    .parallax-banner {
-      height: 50vh;
-    }
-
-    .banner-text h1 {
-      font-size: 6vw;
-    }
-
-    .banner-text p {
-      font-size: 3vw;
-    }
-
-    .banner-btn {
-      font-size: 0.9rem;
-      padding: 8px 20px;
-    }
+  .why-choose-box p {
+    font-size: 11px;
   }
 
-  @media (max-width: 480px) {
-    .parallax-banner {
-      height: 45vh;
-    }
-
-    .banner-text h1 {
-      font-size: 7vw;
-    }
-
-    .banner-text p {
-      font-size: 3.5vw;
-    }
-
-    .banner-btn {
-      font-size: 0.8rem;
-      padding: 6px 15px;
-    }
+  /* Buttons */
+  .apply-btn {
+    width: 10px;
+    height: 10px;
+    font-size: 13px;
   }
-
-  /* ---------------------------------
-    MOBILE VIEW (Average Mobile Size)
-  ----------------------------------- */
-  @media (max-width: 600px) {
-
-
-    .parallax-banner {
-      height: 95vh;
-    }
-
-    .logo-background::before,
-    .parallax-video {
-      height: 95vh;
-      pointer-events: none !important;
-    }
-
-    /* Parallax Banner */
-    .banner-text {
-      position: fixed;
-      top: 75%;
-      left: 0;
-      width: 100%;
-      padding: 0 6%;
-      text-align: left;
-    }
-
-    .banner-text h1 {
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
-
-    .banner-text p {
-      font-size: 9px;
-    }
-
-    /* Broadcast Section */
-    .broadcast-section {
-      height: 5vh;
-    }
-
-
-    .broadcast-text {
-      font-size: 10px;
-      animation-duration: 20s;
-    }
-
-    .scrollable_section {
-      padding-top: 15%;
-    }
-
-    .home_section_1 h6 {
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .home_section_1 h1 {
-      font-size: 14px;
-    }
-
-    /* Section 2 (About Ithis) */
-    .home_section_2 .row {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0;
-    }
-
-    .home_section_2 .col-5,
-    .home_section_2 .col-6 {
-      width: 100%;
-    }
-
-    .home_section_2 img {
-      width: 90%;
-      margin-bottom: 15px;
-    }
-
-    .home_section_2 h4 {
-      font-size: 9px;
-      line-height: 1.5;
-    }
-
-
-    /* Principal Section */
-    .principal-section {
-      display: flex;
-      flex-direction: column;
-      margin-top: 20px;
-    }
-
-    .principal-text-section,
-    .principal-img-section {
-      height: auto;
-      padding: 15px 15px;
-    }
-
-    .principal-text-section p {
-      font-size: 9px;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      padding-bottom: 0px;
-      text-align: justify;
-    }
-
-    .principal-img-container {
-      width: 70%;
-      height: 150px;
-      border: 3px solid var(--main-color);
-    }
-
-    .principal-txt-grp h1 {
-      font-size: 12px;
-    }
-
-    .principal-txt-grp p {
-      margin: 0px;
-      padding: 0px;
-      font-size: 9px;
-    }
-
-    .know_more {
-      background-color: var(--component);
-      color: white;
-      border-radius: 35px;
-      width: 20vw;
-      height: 6vw;
-      font-size: 2vw;
-    }
-
-    .home_3_center_div {
-      border: none !important;
-    }
-
-    .know_more:hover {
-      border: 1px solid black;
-      background-color: white;
-      color: var(--component);
-    }
-
-    /* Courses Section */
-    .course-section {
-      padding: 40px 15px;
-    }
-
-    .course-section-txts {
-      width: 100%;
-    }
-
-    .course-section-txts h1 {
-      font-size: 22px;
-    }
-
-    .course-section-txts p {
-      font-size: 14px;
-    }
-
-    .course-cards-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-
-    .course-card {
-      width: 90%;
-      height: auto;
-      /* allows height to adjust automatically */
-      border: none !important;
-    }
-
-    .card-overlay {
-      height: 60px;
-      font-size: 18px;
-    }
-
-    .course-card-img {
-      position: relative;
-      width: auto;
-      height: 250px;
-      /* adjust height for mobile cards */
-    }
-
-    /* Facilities Section */
-    .home_sec_3_container {
-      flex-direction: column;
-      align-items: center;
-      border: none;
-      padding: 20px 0;
-    }
-
-    .home_sec_3_container img {
-      width: 30%;
-      margin-bottom: 10px;
-    }
-
-    .home_sec_3_container h3 {
-      font-size: 18px;
-    }
-
-    .home_sec_3_container h5 {
-      font-size: 13px;
-      text-align: center;
-    }
-
-    /* Circular Logos Section */
-    .home_section_4 .row {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .circular-img {
-      width: 100px;
-      height: 100px;
-    }
-
-    .home_section_4 h5 {
-      font-size: 14px;
-    }
-
-    /* Why Choose Us Section */
-    .why-choose-us-section {
-      position: relative;
-      z-index: 10;
-      /* anything above 0 */
-      padding: 20px 10px;
-    }
-
-    .why-choose-box-container {
-      display: flex;
-      flex-direction: row;
-      overflow-x: auto;
-      overflow-y: hidden;
-      gap: 20px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 10px 0;
-      position: relative;
-      z-index: 10;
-
-      /* ✅ Remove centering */
-      justify-content: flex-start;
-      /* left-align items so overflow works */
-    }
-
-
-    .why-choose-box {
-      flex: 0 0 80%;
-      scroll-snap-align: center;
-      text-align: left;
-    }
-
-    .why-choose-icon img {
-      width: 35px;
-    }
-
-    .why-choose-box h2 {
-      font-size: 15px;
-    }
-
-    .why-choose-box p {
-      font-size: 11px;
-    }
-
-    /* Buttons */
-    .apply-btn {
-      width: 10px;
-      height: 10px;
-      font-size: 13px;
-    }
-  }
+}

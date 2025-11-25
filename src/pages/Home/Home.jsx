@@ -130,7 +130,7 @@ function Home() {
                   <img src="/Homeimages/home_section_2_img.png" className='img-fluid' alt="" />
                 </div>
                 <div className="col-6 d-flex flex-column justify-content-around">
-                  <h2 style={{ textAlign: "start" }}>Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
+                  <h2 className='medcity-about' style={{ textAlign: "start" }}>Ithis Hospital and Ithis Nursing College stand as beacons of hope, healing, and heartfelt service in Kerala. The two are founded on the spirit of delivering compassionate care and taking part in building a future generation of healthcare professionals. Both work hand in hand in fulfilling their commitment to serving the community and redefining the meaning of excellence in healthcare.
 
 
                   </h2>
